@@ -1,0 +1,2621 @@
+<!DOCTYPE html>
+<!-- saved from url=(0076)https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#stage-4 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+    
+    DPST1091 22T1 - Programming Fundamentals!
+    
+</title><link rel="canonical" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/">
+
+<link rel="stylesheet" href="./DPST1091 22T1 - Programming Fundamentals!_files/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="./DPST1091 22T1 - Programming Fundamentals!_files/course.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="./DPST1091 22T1 - Programming Fundamentals!_files/popper.min.js.download" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="./DPST1091 22T1 - Programming Fundamentals!_files/bootstrap.min.js.download" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="./DPST1091 22T1 - Programming Fundamentals!_files/course.js.download"></script>
+
+
+<link rel="icon" type="image/png" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/flask.cgi/static/favicon.ico?1271641727963.0">
+
+<!-- <script async src="https://static.codepen.io/assets/embed/ei.js"></script> -->
+
+<!-- MathJax. -->
+
+
+
+<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css">
+<!-- add after bootstrap.min.js -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+
+
+
+<script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body class="d-flex flex-column" style="min-height: 100vh;" data-new-gr-c-s-check-loaded="14.1051.0" data-gr-ext-installed=""><div id="MathJax_Message" style="display: none;"></div>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light no-print" id="header-navbar">
+  <div class="container">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navmenu" aria-controls="navmenu" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <a class="navbar-brand" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/">
+        DPST1091 22T1
+    </a>
+
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active"><a class="nav-link" href="https://teams.microsoft.com/l/team/19%3a217T_M_KAA8fHXJa8hT9IJS89r2DqsQeN5ouUAmi1lM1%40thread.tacv2/conversations?groupId=7572f827-8dcd-46a7-bf48-a4db6ed4e4bd&amp;tenantId=3ff6cfa4-e715-48db-b8e1-0867b9f9fba3">Forum</a></li>
+        <li class="nav-item active"><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/student/">Submissions</a></li>
+        <li class="nav-item active"><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/history/">History</a></li>
+
+        
+        <li class="nav-item active"><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html">Assignment 1</a></li>
+        
+
+        
+
+        
+        
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<main class="container" aria-label="Content" style="flex: 1; padding-top: 4rem;">
+
+
+<header>
+
+</header>
+
+
+<style>
+h1::before,h2::before {
+  content: '';
+  display: block;
+  height:      50px;
+  margin-top: -50px;
+  visibility: hidden;
+}
+
+#toc {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 70px;
+}
+</style>
+<div class="row">
+
+
+<div class="col-lg-10 col-12">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+
+ .nav-tabs .nav-item {
+   font-size: 1.5em;
+ }
+ .accordion .btn:before {
+   content: "−   ";
+   padding-right: 25px;
+   float: left;
+   vertical-align: middle;
+ }
+ .accordion .btn.collapsed:before {
+   /* symbol for "collapsed" panels */
+   content: "＋ ";
+ }
+
+ .accordion .btn {
+   font-size: 1.5em;
+ }
+
+ .tab-content {
+   border: 1px solid #dee2e6;
+   padding: 5px;
+ }
+
+ h1, h2, h3, h4, h5, p {
+   margin-top: 0.8em;
+   margin-bottom: 0.8em;
+ }
+
+
+
+.red_code {
+
+  tab-size: 2;
+  border-radius: 3px;
+  padding: 0.2em 0.4em;
+  font-size: 85%;
+  background: rgba(135, 131, 120, 0.15);
+  color: #eb5757;
+}
+
+code {
+  margin-right: 0.3em;
+  margin-left: 0.3em;
+}
+
+.code-wrap {
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+
+
+ .accordion {
+   margin-bottom: 5px;
+ }
+
+img {
+    /* Prevent horizontal scrolling on mobile  */
+    max-width: 100%;
+    /* Horizontally center images */
+    display: block;
+    margin: 0 auto;
+
+}
+
+  .minefield-diagram {
+      font-size: 80%;
+      width: 80%;
+      margin: 1em auto;
+      table-layout: fixed;
+      text-align: center }
+  .minefield-diagram th {
+      border-top: 0 }
+  .minefield-diagram td {
+      padding: .3rem 0;
+    border: 1px solid #dee2e6 }
+
+ .btn.hide-middle {
+   background: rgba(200,200,200,0.9);
+   position: relative;
+   top: -20px;
+ }
+ div.hide-middle {
+   max-height: 100px;
+   overflow-y: hidden;
+ }
+
+
+</style>
+<script>
+    $(function() {
+        $('.animated_minefield').each(function(index, element) {
+            let frames = $(element).children();
+            let frame_delay = $(element).attr('data-delay');
+            frames.hide();
+            $(frames[0]).show();
+            let current_frame = 0;
+            setInterval(() => {
+                frames.hide();
+                $(frames[current_frame]).show();
+                current_frame = (current_frame + 1) % frames.length;
+            }, frame_delay);
+        });
+    });
+</script>
+
+
+
+<h1 id="CSE Valley">CSE Valley</h1>
+<p>When the fire nation started attacking the
+  DPST1091 Land, citizens were forced to go back to basics.
+    They began farming to meet their daily needs. As an aspiring developer in DPST1091 Land, your first
+    task is to create a simulation called <code>cse_valley</code>, which mimics everyone's environment.
+</p>
+<h2 id="overview">Overview</h2>
+<h3>Assignment Livestream</h3>
+<p>Our friends at COMP1511 have a video going over the basics of the assignment!</p>
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="./DPST1091 22T1 - Programming Fundamentals!_files/QCgr8DHKDz8.html" title="YouTube video player" width="560"></iframe>
+<h3>The World!</h3>
+<p>
+<code>cse_valley</code> is a simple world, basically a grid and everything must occur here. Your job is to act as a farmer to seed, grow, harvest, and trade plants for your wellbeing.
+  The success of your career depends on how you navigate this challenging world.   
+</p>
+<p>
+  The image below visualises what this world looks like where you, the farmer, begin your journey!
+</p>
+<img alt="struct land" src="./DPST1091 22T1 - Programming Fundamentals!_files/farm-land.png" width="70%">
+<h3>Provided Structs</h3>
+<p>You have been provided with 3 existing <code>struct</code> data types to help you with your implementation of this simulation. </p>
+<p>
+  These structs and their purposes are shown below.
+</p>
+<ul class="bulleted-list">
+<li style="list-style-type:disc"><code>struct land</code>
+<ul class="bulleted-list">
+<li style="list-style-type:circle"><strong>Purpose:</strong> To store the state of an individial block of land.</li>
+</ul>
+<ul class="bulleted-list">
+<li style="list-style-type:circle"><strong>Contains: </strong></li>
+<ul>
+<li><code>int</code><code class="red_code">is_watered</code> - represents if this particular block of land is currently watered.</li>
+<li><code>char</code><code class="red_code">seed_name</code> - stores the single letter name of the seed currently planted in this block of land.</li>
+</ul>
+</ul>
+<ul class="bulleted-list">
+<li style="list-style-type:circle"><strong>Hint: </strong> You should not need to use this struct until Stage 2.</li>
+</ul>
+<ul style="list-style: none;">
+<li><img alt="struct land" src="./DPST1091 22T1 - Programming Fundamentals!_files/struct-land.png" width="70%"></li>
+</ul>
+</li>
+</ul>
+<ul class="bulleted-list">
+<li style="list-style-type:disc"><code>struct seeds</code>
+<ul class="bulleted-list">
+<li style="list-style-type:circle"><strong>Purpose:</strong> To store information about a single type of seed.</li>
+</ul>
+<ul class="bulleted-list">
+<li style="list-style-type:circle"><strong>Contains: </strong></li>
+<ul>
+<li><code>char</code><code class="red_code">name</code> - stores the single letter name of this type of seed.</li>
+<li><code>int</code><code class="red_code">amount</code> - stores the number of available seeds to plant of this type (not including the amount currently planted).</li>
+</ul>
+</ul>
+<ul class="bulleted-list">
+<li style="list-style-type:circle"><strong>Note: </strong><code class="red_code">name</code> is initialised to <code>NO_SEED</code>
+              and seed can only have lowercase letters (i.e. between <code>'a'</code> and
+              <code>'z'</code> inclusive) as its name.</li>
+</ul>
+<ul style="list-style: none;">
+<li><img alt="struct land" src="./DPST1091 22T1 - Programming Fundamentals!_files/struct-seeds.png" width="70%"></li>
+</ul>
+</li>
+</ul>
+<ul class="bulleted-list">
+<li style="list-style-type:disc"><code>struct farmer</code>
+<ul class="bulleted-list">
+<li style="list-style-type:circle"><strong>Purpose:</strong> To store the current state of a farmer.</li>
+</ul>
+<ul class="bulleted-list">
+<li style="list-style-type:circle"><strong>Contains: </strong></li>
+<ul>
+<li><code>int</code><code class="red_code">curr_col</code> - stores the current column coordinate of the farmer.</li>
+<li><code>int</code><code class="red_code">curr_row</code> - stores the current row coordinate of the farmer.</li>
+<li><code>int</code><code class="red_code">curr_dir</code> - stores a character representing the direction the farmer is currently facing.</li>
+</ul>
+</ul>
+<ul class="bulleted-list">
+<li style="list-style-type:circle"><strong>Note: </strong><code class="red_code">curr_dir</code> can only have values of <code>&gt;</code>,
+          <code>&lt;</code>, <code>v</code>, and <code>^</code>, 
+          representing facing right, left, up, and down respectively.</li>
+</ul>
+<ul style="list-style: none;">
+<li><img alt="struct land" src="./DPST1091 22T1 - Programming Fundamentals!_files/struct-farmer.png" width="70%"></li>
+</ul>
+</li>
+</ul>
+<aside class="hint">
+  For the first two stages, you
+  will not need to modify any of the structs we have given you. However, in the later stages,
+  you may need to make changes to the structs we have given you (or specifically, what is inside them).
+</aside>
+<h2 id="the-commands">The Commands</h2>
+<p>
+  As part of running the simulation, you as the aspiring developer of DPST1091 Land need to allow for commands to be given to your program. 
+  These commands are how you will interact with the game. The simulation runs through 2 modes, setup and game.
+  </p><ol>
+<div id="setup-explanation">
+<li><strong>Setup: </strong>This is where the user sets the number of and type of seeds initially avaliable to the farmer. This is further explained in <a href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#stage-1.1">Stage 1.1</a></li>
+</div>
+<div id="game-explanation">
+<li><strong>Game: </strong>This is the main game mode. Commands are read in indefinitely, until EOF.</li>
+<ul>
+<li>
+          Each command given to the program will be a combination of char and integers. 
+        </li>
+<li>
+          There could be a large number of lines of input, so you <strong>must not store </strong>all the commands in an array — you should scan them in individually. 
+        </li>
+<li>
+          Depending on the initial command argument character, you will have to scan in a differing number of additional variables (called "arguments"). For example, in <a href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#stage-1.2">Stage 1.2</a>, the “Printing One Seed” command requires a command argument <code class="red_code">s</code>, followed by an additional argument that specifies the name of the seed to be printed.
+        </li>
+<li>
+          The specifics of the commands are detailed in a series of stages below.
+        </li>
+</ul>
+<aside class="note">
+        You can assume that your program will never be given a non-existent command or command
+        arguments that are not of the right type.
+      </aside>
+</div>
+</ol>
+<p></p>
+<h2 id="allowed-c-features">Allowed C Features</h2>
+<p>In this assignment, there are no restrictions on C Features, except for 
+those in the <a href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/resources/style_guide.html">Style 
+Guide</a>.</p>
+<p>We <strong>strongly</strong> encourage you to complete the assessment using only 
+features taught in lectures up to and including Week 4. The only C features you 
+will need to get full marks in the assignment are:</p>
+<ul>
+<li><code>int</code> variables</li>
+<li><code>char</code> variables</li>
+<li><code>if</code> statements, including all relational and logical operators</li>
+<li><code>while</code> loops</li>
+<li><code>printf</code> and <code>scanf</code></li>
+<li>structs</li>
+<li>arrays, including two dimensional arrays</li>
+<li>Your own helper functions</li>
+</ul>
+<p>Using any other features will not increase your marks (and will make it more 
+likely you make style mistakes that cost you marks).</p>
+<p>If you choose to disregard this advice, you <strong>must</strong> still follow the 
+<a href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/resources/style_guide.html">Style Guide</a>. 
+You also may be unable to get help from course staff if you use 
+features not taught in DPST1091.</p>
+<p>Features that the Style Guide strongly discourages or bans will be penalised during marking.</p>
+<h2 id="reference-implementation">Reference Implementation</h2>
+<p>
+  To help you understand the proper behaviour of CSE Valley, we have provided
+  a reference implementation. If you have any questions about the behaviour of
+  CSE Valley, you can check them against this reference implementation.
+</p>
+<p>
+  To access the reference Implementation
+
+    </p><pre is="tty"><kbd is="sh">1091 cse_valley</kbd></pre>
+<h2 id="starter-code">How To Get Started</h2>
+<p>
+  There are a few steps to getting started with CSE Valley.
+</p>
+<ol>
+<li>
+    Create a new folder for your assignment work and move into it.
+    <pre is="tty"><kbd is="sh">mkdir ass1</kbd>
+<kbd is="sh">cd ass1</kbd></pre>
+</li>
+<li>
+<a href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/activities/cse_valley/cse_valley.c">
+<strong>Download the starter code (cse_valley.c) here</strong>
+</a>
+      or use this command on your CSE account to copy the file into your current directory:</li></ol><p></p>
+<pre is="tty"><kbd is="sh">cp -n /web/dp1091/22T1/activities/cse_valley/cse_valley.c .</kbd></pre>
+
+<li>
+    Run <code>1091 autotest</code> to make sure you have correctly downloaded the file.
+    <pre is="tty"><kbd is="sh">1091 autotest cse_valley</kbd></pre>
+</li>
+<li>
+    Spend a few minutes playing with the reference solution -- get a feel for how the assignment works.
+    <pre is="tty"><kbd is="sh">1091 cse_valley</kbd></pre>
+</li>
+<li>
+    Read through Stage 1, which is below.
+  </li>
+<li>
+    Think about your solution, draw a diagram of the<code>farm_land</code> to help you get started
+  </li>
+<li>    
+      Start coding!
+  </li>
+
+<h2 id="about-the-starter-code">About the Starter Code</h2>
+<p>The provided starter code has done some setup for you. This is explained below.</p>
+<p>Before the main function, the starter code has:</p>
+<ol>
+<li>Imported libraries, defined some initial <code>#define</code>'s, and defined the structs described above</li>
+<li>Declared some functions, which are used to setup the game. You do not need to use these functions!</li>
+<li>Declared a<code class="red_code">print_land</code> function which you will have to use in stage 2.</li>
+</ol>
+<p>In the main function, the starter code has:</p>
+<ol>
+<li>Declared and initialised an instance of a <code>struct farmer</code> called <code class="red_code">cse_farmer</code>.</li>
+<ul>
+<li>This sets farmer's <code class="red_code">curr_col</code> and <code class="red_code">curr_row</code> to be <code>0</code>, and <code class="red_code">curr_dir</code> to be <code>&gt;</code>.</li>
+</ul>
+<li>Declared and initialised a 2D array of <code>struct land</code> called <code class="red_code">farm_land</code>.</li>
+<ul>
+<li>This will set every<code class="red_code">is_watered</code> to be <code>FALSE</code> and every <code class="red_code">seed_name</code> to be <code>NO_SEED</code> for all elements on the 2D array.</li>
+</ul>
+<li>Declared and initialised a regular 1D array of <code>struct seeds</code> called <code class="red_code">seed_collection</code>.</li>
+<ul>
+<li>This will set every<code class="red_code">amount</code> to be <code>0</code> and every <code class="red_code">name</code> to be <code>NO_SEED</code> for all elements in the array.</li>
+</ul>
+<li>This is where you write your code!</li>
+</ol>
+<h1 id="your-tasks">Your Tasks</h1>
+<p>
+  This assignment consists of four stages. Each stage builds on the work of the
+  previous stage, and each stage has a higher complexity than its predecessor.
+  You should complete the stages in order.
+</p>
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item active"><a class="nav-link" data-toggle="tab" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#stage-1-tab" role="tab" aria-selected="false">Stage 1 <small>●◌◌</small></a></li>
+<li class="nav-item"><a class="nav-link" data-toggle="tab" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#stage-2-tab" role="tab">Stage 2 <small>●◌◌</small></a></li>
+<li class="nav-item"><a class="nav-link" data-toggle="tab" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#stage-3-tab" role="tab" aria-selected="false">Stage 3 <small>●●◌</small></a></li>
+<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#stage-4-tab" role="tab" aria-selected="true">Stage 4 <small>●●●</small></a></li>
+</ul>
+<div class="tab-content">
+<div class="toc-switchable tab-pane fade in" id="stage-1-tab" role="tab-panel">
+      <h2 id="stage-1">Stage 1</h2>
+
+<aside class="rationale">
+  
+  <p>
+      <b>Why does this stage exist?</b> This stage tests your ability to scan user input, create while loops, access 
+      values in an array, and traverse a one dimensional array. These are core skills for this course and also specifically 
+      in this assignment. You must display a basic understanding of how these work and how they can be applied in your own   
+      problem solving. Arrays are a common data structure used to store data on a computer and to help solve problems, which is the reason 
+      they form such a vital portion of the course.
+  </p>
+  <p>
+      <b>Who do we expect to complete this stage?</b> We hope that all students will be able to complete this stage.
+  </p>
+  <p>
+      <b>What help will tutors provide to students?</b> Tutors can give you a theoretical explanation, and give lots of 
+      help with the lab exercises that lead to this assignment. Tutors will be happy to help you debug any issues with 
+      your code.
+  </p>
+  <p>
+      <b>How many marks will I get?</b> Completing this stage, with good style, is worth around a 30% mark.
+  </p>
+
+</aside>
+
+<p>In this stage, you will implement:</p>
+<ol>
+  <li>
+    The ability to choose what seed types you would like to start with,
+  </li>
+  <li>
+    The ability to print out the number of the different seed types that a farmer has,
+  </li>
+  <li>
+    The ability to print out a specific type of seed and its amount.
+  </li>
+</ol>
+
+
+<div id="stage-1.1">
+<h3>1.1: Scanning Different Seed Names</h3>
+
+<p>
+  To get everyone started with their farms, all farmers will receive <code>60</code> seeds each. 
+  As a farmer, you will be able to say how many different seeds you wish to have (from <code>1</code> to 
+  <code>5</code> inclusive) and what their different names are. The <code>60</code> seeds will be then <strong>split 
+  equally</strong> amongst the different seed names you have specified.
+</p>
+
+
+<h4>Invalid Inputs and Clarifications</h4>
+<ul class="bulleted-list">
+  <li style="list-style-type:disc">We can assume that the farmer will only enter a number between <code>1</code>
+      and <code>5</code> (inclusive) as the number of different seeds that they wish to have.
+  </li>
+  <li style="list-style-type:disc">We can assume that the farmer will not put in the same seed names.</li>
+  <li style="list-style-type:disc">We can assume that the farmer will only put in a lowercase alphabet
+    character for each different seed name.
+  </li>
+</ul>
+
+<aside class="hint">
+  To ignore possible whitespaces such as a newline, make sure to
+  put a space before the <code>%c</code> when using the <code class="red_code">scanf</code> function. 
+</aside>
+
+<aside class="hint">
+    Currently we have defined <code class="red_code">seed_collection</code> to be an array of <code>struct seeds</code>. 
+    Your job is to modify the array to accommodate the seeds that were given to each farmer. Make sure 
+    that the order is right! For example, the first seed name to be scanned in should appear as 
+    <code class="red_code">seed_collection[0]</code> and so on and so forth.
+</aside>
+
+<aside class="note">
+  This is the only task that you have to implement on the <a href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#setup-explanation">setup</a>
+  component of the simulation. From this moment on, you will be dealing with the 
+  <a href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#game-explanation">game</a> component.
+</aside>
+
+
+
+<div class="accordion" id="accordiona">
+  <div class="card">
+    <div class="card-header" id="headinga">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsea" aria-expanded="true" aria-controls="collapsea">
+          Example 1.1.1: Scanning in Seeds
+        </button>
+    </div>
+
+    <div id="collapsea" class="collapse" aria-labelledby="headinga" data-parent="#accordiona">
+      <div class="card-body">
+  
+<pre is="tty"><kbd is="sh">./cse_valley</kbd>
+Welcome to CSE Valley, farmer!
+Congratulations, you have received 60 seeds.
+How many different seeds do you wish to have? <kbd>3</kbd>
+Enter the names of the seeds to be given:
+<kbd>b</kbd>
+<kbd>c</kbd>
+<kbd>a</kbd>
+Game Started!
+Enter command: <span class="eof"></span>
+</pre>
+<aside class="hint">
+    The farmer now has
+    <code>20</code> seeds of <code>'b'</code>, <code>20</code> seeds of
+    <code>'c'</code>, and <code>20</code> seeds of <code>'a'</code> since
+    <code>60 ÷ 3 = 20</code>.
+</aside>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+
+
+
+
+<div id="stage-1.2">
+<h3>1.2: Printing All Seeds</h3>
+
+<p>A farmer should be able to find out their seeds inventory. This is done in the simulation
+  using the <strong>Printing All Seeds</strong> command. This command will 
+  print all the current seeds that a farmer has at their disposal, in the order 
+  the seeds were initialised.
+</p>
+
+<p>
+  The <strong>Printing All Seeds </strong>command is
+  specified by the command argument <code class="red_code">a</code>. 
+  The output should be given in the following format:
+</p>
+
+<pre is="tty">  Seeds at your disposal:
+  - m seed(s) with the name 'n'
+  ...
+</pre>
+<p>where <code>m</code> is the amount of seeds with the name <code>n</code>
+  for all seeds that the farmer currently has.
+</p>
+
+<aside class="hint">
+    Make sure that you do not print <code>struct seeds</code> that has <code>NO_SEED</code>
+    as their name!
+</aside>
+
+<aside class="hint">
+  You may have to loop through the array <code class="red_code">seed_collection</code> to access all the different seeds.
+</aside>
+
+
+
+<div class="accordion" id="accordionb">
+  <div class="card">
+    <div class="card-header" id="headingb">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseb" aria-expanded="true" aria-controls="collapseb">
+          Example 1.2.1: Printing All Seeds
+        </button>
+    </div>
+
+    <div id="collapseb" class="collapse" aria-labelledby="headingb" data-parent="#accordionb">
+      <div class="card-body">
+  
+<pre is="tty"><kbd is="sh">./cse_valley</kbd>
+Welcome to CSE Valley, farmer!
+Congratulations, you have received 60 seeds.
+How many different seeds do you wish to have? <kbd>3</kbd>
+Enter the names of the seeds to be given:
+<kbd>b</kbd>
+<kbd>c</kbd>
+<kbd>a</kbd>
+Game Started!
+Enter command: <kbd>a</kbd>
+  Seeds at your disposal:
+  - 20 seed(s) with the name 'b'
+  - 20 seed(s) with the name 'c'
+  - 20 seed(s) with the name 'a'
+Enter command: <span class="eof"></span>
+</pre>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+<div id="stage-1.3">
+<h3>1.3: Printing One Seed</h3>
+
+<p>
+  In order to be able to plan their day of seed planting, a farmer needs to be able 
+  to find out the amount of seeds of a particular type. This is done through 
+  the <strong>Printing One Seed</strong> command. The command is specified by the
+  character <code class="red_code">s</code>, followed by the
+  <code class="red_code">seed_name</code> the farmer wish to find out. 
+  The output should be given in the format: 
+</p>
+
+<pre is="tty">  There are m seeds with the name 'n'
+</pre>
+
+
+<p>where <code>m</code> is the number of seeds and <code>n</code> is the name of the seed.</p>
+
+<h4>Invalid Inputs and Clarifications</h4>
+
+<ul class="bulleted-list">
+  <li style="list-style-type:disc">If the farmer puts in an invalid seed name (i.e. something other
+    than a lowercase letter), your program should give an output of:
+<pre is="tty">  Seed name has to be a lowercase letter
+</pre>
+  </li>
+  <li style="list-style-type:disc"> 
+    If the farmer asks you to print out a valid seed name that you do not have in your collection,
+    your program should give an output of:
+<pre is="tty">  There is no seed with the name 'n'
+</pre>
+    where <code>n</code> is the  <code class="red_code">seed_name</code>.
+  </li>
+</ul>
+
+<br>
+
+
+<div class="accordion" id="accordionc">
+  <div class="card">
+    <div class="card-header" id="headingc">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsec" aria-expanded="true" aria-controls="collapsec">
+          Example 1.3.1: Printing One Seed
+        </button>
+    </div>
+
+    <div id="collapsec" class="collapse" aria-labelledby="headingc" data-parent="#accordionc">
+      <div class="card-body">
+  
+<pre is="tty"><kbd is="sh">./cse_valley</kbd>
+Welcome to CSE Valley, farmer!
+Congratulations, you have received 60 seeds.
+How many different seeds do you wish to have? <kbd>2</kbd>
+Enter the names of the seeds to be given:
+<kbd>b</kbd>
+<kbd>c</kbd>
+Game Started!
+Enter command: <kbd>s b</kbd>
+  There are 30 seeds with the name 'b'
+Enter command: <kbd>s a</kbd>
+  There is no seed with the name 'a'
+Enter command: <kbd>s ?</kbd>
+  Seed name has to be a lowercase letter
+Enter command: <span class="eof"></span>
+</pre>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+
+
+<h3>Testing &amp; Submission</h3>
+<p>
+  Are you finished with this stage? If so, you should make sure to do the following:
+</p>
+<ul>
+  <li>
+    Run <code>1091 style</code>, and to clean up any issues a human might have reading
+    your code. Don't forget -- <b>20%</b> of your mark in the assignment is based on
+    style!
+  </li>
+  <li>
+    Autotest for this stage of the assignment by running the <code>autotest-stage</code>
+    command as shown below.
+  </li>
+  <li>
+    Remember -- <i>give early, and give often</i>. Only your last submission counts, but why not
+    be safe and submit right now?
+  </li>
+</ul>
+
+<pre is="tty"><kbd is="sh">1091 style cse_valley.c</kbd>
+<kbd is="sh">1091 autotest-stage 01 cse_valley </kbd>
+<kbd is="sh">give dp1091 ass1_cse_valley cse_valley.c</kbd>
+</pre>
+
+
+
+    </div>
+<div class="toc-switchable tab-pane fade" id="stage-2-tab" role="tab-panel">
+      <h2 id="stage-2">Stage 2</h2>
+
+<aside class="rationale">
+  
+    <p>
+        <b>Why does this stage exist?</b> This stage tests you on dealing with a two dimensional array, 
+        and creating more while loop structures. It will also give you the opportunity to use a
+        function that is given and start creating necessary functions if you choose to. 
+        This is slightly more complicated than the skills in Stage 1, and should help to cement your 
+        understanding.
+    </p>
+    <p>
+        <b>Who do we expect to complete this stage?</b> Though it could be difficult for some, we hope that all students 
+        will be complete almost if not all of this stage.
+    </p>
+    <p>
+        <b>What help will tutors provide to students?</b> Tutors can give you a theoretical explanation, and give lots of 
+        help with the lab exercises that lead to this assignment. Tutors will be happy to help you debug any issues with 
+        your code.
+    </p>
+    <p>
+        <b>How many marks will I get?</b> Completing this stage, with good style, is worth around a 65% mark.
+    </p>
+  
+</aside>
+
+<p>In this stage, you will implement:</p>
+<ol>
+  <li>
+    The ability to use a provided function to print the current state of the farm,
+  </li>
+  <li>
+    The ability for the farmer to move around the farm,
+  </li>
+  <li>
+    The ability for the farmer to attend to an adjacent land,
+  </li>
+  <li>
+    The ability for the farmer to scatter (plant multiple) seeds from where they are
+    to the edge of the farm that they are currently facing 
+    (right and downwards direction only).
+  </li>
+</ol>
+
+<div id="stage-2-1">
+
+<h3>2.1: Printing Land</h3>
+<p>
+  Though normally we would always be able to see the state of the land in real life
+  at any point in time, in a simulation, this is not always practical. Hence, the 
+  simulation needs a <strong>Printing Land</strong> command which prints the state of
+  the land on that moment. The command is specified by the argument <code class="red_code">l</code>.
+  This command needs to call the function <code class="red_code">print_land</code>.
+</p>
+
+<aside class="note">
+  The <code class="red_code">print_land</code> function has been completed for you. Your job is to call this 
+  function whenever the user puts in the <code class="red_code">l</code> command.
+</aside>
+
+
+
+<div class="accordion" id="accordiond">
+  <div class="card">
+    <div class="card-header" id="headingd">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsed" aria-expanded="true" aria-controls="collapsed">
+          Example 2.1.1: Printing Land
+        </button>
+    </div>
+
+    <div id="collapsed" class="collapse" aria-labelledby="headingd" data-parent="#accordiond">
+      <div class="card-body">
+  
+<pre is="tty"><kbd is="sh">./cse_valley</kbd>
+Welcome to CSE Valley, farmer!
+Congratulations, you have received 60 seeds.
+How many different seeds do you wish to have? <kbd>3</kbd>
+Enter the names of the seeds to be given:
+<kbd>b</kbd>
+<kbd>c</kbd>
+<kbd>a</kbd>
+Game Started!
+Enter command: <kbd>l</kbd>
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+| f&gt;|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+Enter command: <span class="eof"></span>
+</pre>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+<div id="stage-2.2">
+
+<h3>2.2: Moving Around the Farm</h3>
+
+<p> 
+  A farmer will need to move around the land to attend to their farm. Hence,
+  the simulation needs to be able to track and show a farmer's movements.
+  Currently, the <strong>Moving Commands</strong> are specified by the characters
+  <code class="red_code">&gt;</code>, <code class="red_code">&lt;</code>, 
+  <code class="red_code">^</code>, and <code class="red_code">v</code> 
+  that corresponds to moving to the right, left, up, and down respectively.
+</p>
+
+<p>
+  At the start of the simulation, the farmer is
+  located at the top left corner <code>(row 0, col 0)</code> of the farm, 
+  facing to the right (i.e. <code class="red_code">cse_farmer.curr_col</code> and
+  <code class="red_code">cse_farmer.curr_row</code> are both 0 and 
+  <code class="red_code">cse_farmer.curr_dir</code> is <code>&gt;</code>).
+</p>
+
+<p>To move to an adjacent <code>struct land</code>, the
+    farmer must already be facing that direction. This means that the farmer can only go from
+    <code>(row 0, col 0)</code> to <code>(row 0, col 1)</code> by putting in the <code class="red_code">&gt;</code> command. Any other movement
+    commands would change the farmer's direction to the given command. The same command would need to be given
+    again for the farmer to actually move in that direction.
+</p>
+
+
+<h4>Invalid Inputs and Clarifications</h4>
+<ul class="bulleted-list">
+  <li style="list-style-type:disc">A farmer can't go outside outside the boundary of 
+    the farm. (E.g if the farmer is currently located in <code>(row 0, col 0)</code>
+    and facing up, the command <code class="red_code">^</code> will not do anything)</li>
+</ul>
+
+<aside class="hint">
+  Let's say the farmer is trying to move from <code>(row 0, col 0)</code> to <code>(row 1, col 0)</code> and
+    currently the farmer is facing to the right (i.e. <code>&gt;</code>). Then we need to put 2 <code class="red_code">v</code>
+    commands: the first one to change the direction of the farmer to be facing to the bottom
+  (i.e. <code>v</code>) and the second to then move to <code>(row 1, col 0)</code>.
+</aside>
+
+
+<div class="accordion" id="accordione">
+  <div class="card">
+    <div class="card-header" id="headinge">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsee" aria-expanded="true" aria-controls="collapsee">
+          Example 2.2.1: No Directions Changed
+        </button>
+    </div>
+
+    <div id="collapsee" class="collapse" aria-labelledby="headinge" data-parent="#accordione">
+      <div class="card-body">
+  
+<pre is="tty"><kbd is="sh">./cse_valley</kbd>
+Welcome to CSE Valley, farmer!
+Congratulations, you have received 60 seeds.
+How many different seeds do you wish to have? <kbd>3</kbd>
+Enter the names of the seeds to be given:
+<kbd>b</kbd>
+<kbd>c</kbd>
+<kbd>a</kbd>
+Game Started!
+Enter command: <kbd>l</kbd>
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+| f&gt;|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+Enter command: <kbd>&gt;</kbd>
+Enter command: <kbd>&gt;</kbd>
+Enter command: <kbd>l</kbd>
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|   |   | f&gt;|   |   |   |   |   |
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+Enter command: <span class="eof"></span>
+</pre>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<img width="100%" src="./DPST1091 22T1 - Programming Fundamentals!_files/movement-ex-1.gif" alt="no directions changed">
+
+
+<div class="accordion" id="accordionf">
+  <div class="card">
+    <div class="card-header" id="headingf">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsef" aria-expanded="true" aria-controls="collapsef">
+          Example 2.2.2: Change of Directions
+        </button>
+    </div>
+
+    <div id="collapsef" class="collapse" aria-labelledby="headingf" data-parent="#accordionf">
+      <div class="card-body">
+  
+<pre is="tty"><kbd is="sh">./cse_valley</kbd>
+Welcome to CSE Valley, farmer!
+Congratulations, you have received 60 seeds.
+How many different seeds do you wish to have? <kbd>3</kbd>
+Enter the names of the seeds to be given:
+<kbd>b</kbd>
+<kbd>c</kbd>
+<kbd>a</kbd>
+Game Started!
+Enter command: <kbd>l</kbd>
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+| f&gt;|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+Enter command: <kbd>v</kbd>
+Enter command: <kbd>l</kbd>
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+| f |   |   |   |   |   |   |   |
+| v |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+Enter command: <kbd>v</kbd>
+Enter command: <kbd>l</kbd>
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+| f |   |   |   |   |   |   |   |
+| v |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+Enter command: <kbd>&gt;</kbd>
+Enter command: <kbd>v</kbd>
+Enter command: <kbd>l</kbd>
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+| f |   |   |   |   |   |   |   |
+| v |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+Enter command: <span class="eof"></span>
+</pre>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<img width="100%" src="./DPST1091 22T1 - Programming Fundamentals!_files/movement-ex-2.gif" alt="changed directions">
+
+</div>
+
+<div id="stage-2.3">
+
+<h3>2.3: Attending to an Adjacent Land</h3>
+
+<p>A farmer should be able to take care of the adjacent land that they are currently
+    facing. If the farmer wishes to <strong>water</strong> the land, the 
+    <code class="red_code">o</code> command argument will be followed by the character <code class="red_code">w</code>. 
+    Similarly, if the farmer wishes to <strong>plant a seed</strong> into the land, the 
+    <code class="red_code">o</code> command argument will be followed by the character <code class="red_code">p</code> and
+    the <code class="red_code">seed_name</code> that the farmer wishes to plant. 
+</p>
+
+<p>
+    The pre-made <code class="red_code">print_land</code> function shows
+    any land that is watered by having a <code>W</code> printed on the 
+    top right section of the land. Similarly, it shows any land that has a seed
+    planted by having the name of the seed printed on the top left section of
+    the land.
+</p>
+
+<h4>Invalid Inputs and Clarifications</h4>
+<ul class="bulleted-list">
+    <li style="list-style-type:disc">Trying to plant a seed or water into a land that 
+        is outside the boundary of the farm will not do anything. </li>
+    <li style="list-style-type:disc">When a piece of land is watered, then it will stay watered when watered
+      again, i.e. you cannot unwater land</li>
+      <li style="list-style-type:disc">A seed that has been previously planted on the land spot prior to the
+        command will be replaced by the new seed.</li>
+    <li style="list-style-type:disc">You can assume that the farmer will always plant
+      a seed that they own (i.e. in <code class="red_code">seed_collection</code>).
+      In other words, you will never be asked to plant a seed you do not have in your
+      <code class="red_code">seed_collection</code>.
+    </li>
+</ul>
+
+<aside class="hint">
+  You can use information from <code>struct farmer</code> to find the adjacent 
+  land's row and column indices.
+</aside>
+
+<aside class="hint">
+  Don't forget to update <code class="red_code">seed_collection</code> to account for 
+  the seeds that you planted.
+</aside>
+
+
+<div class="accordion" id="accordiong">
+  <div class="card">
+    <div class="card-header" id="headingg">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseg" aria-expanded="true" aria-controls="collapseg">
+          Example 2.3.1: Watering an Adjacent Land
+        </button>
+    </div>
+
+    <div id="collapseg" class="collapse" aria-labelledby="headingg" data-parent="#accordiong">
+      <div class="card-body">
+  
+<pre is="tty"><kbd is="sh">./cse_valley</kbd>
+Welcome to CSE Valley, farmer!
+Congratulations, you have received 60 seeds.
+How many different seeds do you wish to have? <kbd>3</kbd>
+Enter the names of the seeds to be given:
+<kbd>b</kbd>
+<kbd>c</kbd>
+<kbd>a</kbd>
+Game Started!
+Enter command: <kbd>o w</kbd>
+Enter command: <kbd>l</kbd>
+|---|---|---|---|---|---|---|---|
+|   |  W|   |   |   |   |   |   |
+| f&gt;|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+Enter command: <kbd>v</kbd>
+Enter command: <kbd>o w</kbd>
+Enter command: <kbd>l</kbd>
+|---|---|---|---|---|---|---|---|
+|   |  W|   |   |   |   |   |   |
+| f |   |   |   |   |   |   |   |
+| v |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|  W|   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+Enter command: <span class="eof"></span>
+</pre>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<img width="100%" src="./DPST1091 22T1 - Programming Fundamentals!_files/water-adjacent-ex-1.gif" alt="water adjacent animation">
+
+
+<div class="accordion" id="accordiono">
+  <div class="card">
+    <div class="card-header" id="headingo">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseo" aria-expanded="true" aria-controls="collapseo">
+          Example 2.3.2: Planting into an Adjacent Land
+        </button>
+    </div>
+
+    <div id="collapseo" class="collapse" aria-labelledby="headingo" data-parent="#accordiono">
+      <div class="card-body">
+  
+<pre is="tty"><kbd is="sh">./cse_valley</kbd>
+Welcome to CSE Valley, farmer!
+Congratulations, you have received 60 seeds.
+How many different seeds do you wish to have? <kbd>3</kbd>
+Enter the names of the seeds to be given:
+<kbd>b</kbd>
+<kbd>c</kbd>
+<kbd>a</kbd>
+Game Started!
+Enter command: <kbd>o p b</kbd>
+Enter command: <kbd>l</kbd>
+|---|---|---|---|---|---|---|---|
+|   |b  |   |   |   |   |   |   |
+| f&gt;|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+Enter command: <kbd>v</kbd>
+Enter command: <kbd>o p a</kbd>
+Enter command: <kbd>l</kbd>
+|---|---|---|---|---|---|---|---|
+|   |b  |   |   |   |   |   |   |
+| f |   |   |   |   |   |   |   |
+| v |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|a  |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+Enter command: <kbd>a</kbd>
+  Seeds at your disposal:
+  - 19 seed(s) with the name 'b'
+  - 20 seed(s) with the name 'c'
+  - 19 seed(s) with the name 'a'
+Enter command: <span class="eof"></span>
+</pre>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<img width="100%" src="./DPST1091 22T1 - Programming Fundamentals!_files/plant-adjacent-ex-1.gif" alt="plant adjacent animation gif">
+
+
+</div>
+
+<div id="stage-2.4">
+
+<h3>2.4: Scattering Seeds</h3>
+
+<p> In order to plant more seeds faster, farmers can use a tool which scatters (plants multiple) seeds
+  in one direction, either until the edge of the farm, or until they run out of seeds.
+  Unfortunately (since the wind in the land always blows south or east),
+  this tool only works if the farmer is facing down, or to the right. Specifically: </p>
+
+<ul>
+  <li>First, perform error checking for invalid inputs as described in the "Invalid Inputs" section. </li>
+  <li>If the farmer is facing left (i.e. <code>&lt;</code>) or up (i.e. <code>^</code>),
+      this command should do nothing, except print out the following error message:
+<pre is="tty">  You cannot scatter seeds ^ or &lt;
+</pre>
+  </li>
+  <li>If the farmer is facing down (i.e. <code>v</code>), a line of seeds should be planted,
+    starting at the farmer, going until either you run out of seeds, or you reach the bottom of the farm. </li>
+  <li>If the farmer is facing right (i.e. <code>&gt;</code>), a line of seeds should be planted,
+    starting at the farmer, going until either you run out of seeds, or you reach the rightmost edge of the farm. </li>
+</ul>
+    This is done through the command argument <code class="red_code">p</code> (for "plant multiple"), followed
+    by the <code class="red_code">name</code> of the seed that the farmer wishes to scatter.
+<p></p>
+
+<h4>Invalid Inputs and Clarifications</h4>
+<ul class="bulleted-list">
+    <li style="list-style-type:disc">Anything that has been previously planted on the land prior to the
+        command should be replaced by the new seed.</li>
+    
+    <li style="list-style-type:disc">
+  Just like in <a href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#stage-1.3">Stage 1.3</a>,
+      If the seed name is not a lowercase letter, you should print:
+<pre is="tty">  Seed name has to be a lowercase letter
+</pre>
+      </li>
+    <li style="list-style-type:disc">
+      if the seed is one you do not currently have,
+      you should print:
+<pre is="tty">  There is no seed with the name 'n'
+</pre>
+        where <code>n</code> is the seed name.
+      </li>
+</ul>
+
+<aside class="hint">
+  Don't forget to update <code class="red_code">seed_collection</code> to account for 
+  the seeds that you planted.
+</aside>
+
+
+<div class="accordion" id="accordionh">
+  <div class="card">
+    <div class="card-header" id="headingh">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseh" aria-expanded="true" aria-controls="collapseh">
+          Example 2.4.1: Planting Multiple Seeds
+        </button>
+    </div>
+
+    <div id="collapseh" class="collapse" aria-labelledby="headingh" data-parent="#accordionh">
+      <div class="card-body">
+  
+<pre is="tty"><kbd is="sh">./cse_valley</kbd>
+Welcome to CSE Valley, farmer!
+Congratulations, you have received 60 seeds.
+How many different seeds do you wish to have? <kbd>3</kbd>
+Enter the names of the seeds to be given:
+<kbd>b</kbd>
+<kbd>a</kbd>
+<kbd>c</kbd>
+Game Started!
+Enter command: <kbd>&gt;</kbd>
+Enter command: <kbd>&gt;</kbd>
+Enter command: <kbd>l</kbd>
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|   |   | f&gt;|   |   |   |   |   |
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+Enter command: <kbd>p b</kbd>
+Enter command: <kbd>a</kbd>
+  Seeds at your disposal:
+  - 14 seed(s) with the name 'b'
+  - 20 seed(s) with the name 'a'
+  - 20 seed(s) with the name 'c'
+Enter command: <kbd>l</kbd>
+|---|---|---|---|---|---|---|---|
+|   |   |b  |b  |b  |b  |b  |b  |
+|   |   | f&gt;|   |   |   |   |   |
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+Enter command: <kbd>v</kbd>
+Enter command: <kbd>p c</kbd>
+Enter command: <kbd>a</kbd>
+  Seeds at your disposal:
+  - 14 seed(s) with the name 'b'
+  - 20 seed(s) with the name 'a'
+  - 12 seed(s) with the name 'c'
+Enter command: <kbd>l</kbd>
+|---|---|---|---|---|---|---|---|
+|   |   |c  |b  |b  |b  |b  |b  |
+|   |   | f |   |   |   |   |   |
+|   |   | v |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |c  |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |c  |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |c  |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |c  |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |c  |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |c  |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |c  |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+Enter command: <span class="eof"></span>
+</pre>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<h3>Testing &amp; Submission</h3>
+<p>
+  Are you finished with this stage? If so, you should make sure to do the following:
+</p>
+<ul>
+  <li>
+    Run <code>1091 style</code>, and to clean up any issues a human might have reading
+    your code. Don't forget -- <b>20%</b> of your mark in the assignment is based on
+    style!
+  </li>
+  <li>
+    Autotest for this stage of the assignment by running the <code>autotest-stage</code>
+    command as shown below.
+  </li>
+  <li>
+    Remember -- <i>give early, and give often</i>. Only your last submission counts, but why not
+    be safe and submit right now?
+  </li>
+</ul>
+
+<pre is="tty"><kbd is="sh">1091 style cse_valley.c</kbd>
+<kbd is="sh">1091 autotest-stage 02 cse_valley </kbd>
+<kbd is="sh">give dp1091 ass1_cse_valley cse_valley.c</kbd>
+</pre>
+
+
+
+    </div>
+<div class="toc-switchable tab-pane fade" id="stage-3-tab" role="tab-panel">
+      <h2 id="stage-3">Stage 3</h2>
+
+<aside class="rationale">
+
+  <p><b>Why does this stage exist?</b> This stage adds extra functionalities to your pre-existing code, 
+      and decision-making based on the contents of two dimensional arrays. These skills are not essential
+      to pass DPST1091, however, they are needed to succeed in solving more difficult problems. They are 
+      also applications of the skills taught in Stage 1 and Stage 2.
+  </p>
+  <p>
+      <b>Who do we expect to complete this stage?</b> Students who want to be
+      set-up for success in future computing courses should attempt these stages.
+      If you are struggling with DPST1091, you may find that doing this stage helps,
+      though you may also get some benefit from working through lab exercises.
+  </p>
+  <p>
+      <b>What help will tutors provide to students?</b> Tutors can give you a theoretical
+      explaination, and give lots of help with the lab exercises that lead to this assignment.
+      Tutors will be happy to help you debug issues with code, though they may
+      prioritize Stage 1 and Stage 2 help over giving help to people in Stage 3. Some of the
+      help given will be less specific than it would have been in Stage 1.
+  </p>
+  <p>
+      <b>How many marks will I get?</b> Completing this stage, with good style, is worth around a 90% mark.
+  </p>
+  
+  </aside>
+
+<p>In this stage, you will implement:</p>
+<ol>
+  <li>
+    The ability to water a square of the land in one go,
+  </li>
+  <li>
+    The ability for the farmer to move to the next day and harvest a plant,
+  </li>
+  <li>
+    The ability to trade seeds.
+  </li>
+</ol>
+
+<div id="stage-3.1">
+
+<h3>3.1: Square Watering</h3>
+
+<p> One perk of being in the DPST1091 Land is the ability to summon the god of rain, 
+  known as the <strong>Square Watering</strong> command. This command is specified by the
+  argument <code class="red_code">w</code>, followed by a number representing the 
+  <code class="red_code">size</code> of the square section of the farm land.
+</p>
+<p>To demonstrate this, say you are on <code>(row 2, col 3)</code> of the farm. 
+  When the command of <code class="red_code">w 2</code> is played, all the
+  land from <code>row 0</code> (2 - 2) and <code>col 1</code> (3 - 2) until
+    <code>row 4</code> (2 + 2) and <code>col 5</code> (3 + 2) now become watered (as shown in the
+  image and in Example 3.1.1) </p>
+
+<img width="100%" src="./DPST1091 22T1 - Programming Fundamentals!_files/watering-square-ex-1.png" alt="explaining above paragraph in a picture">
+
+
+<h4>Invalid Inputs and Clarifications</h4>
+<ul class="bulleted-list">
+  <li style="list-style-type:disc">If the farm puts in a negative number as the <code class="red_code">size</code>,
+  your program should output:
+<pre is="tty">  The size argument needs to be a non-negative integer
+</pre>
+  </li>
+    <li style="list-style-type:disc">When a piece of land is watered, then it will stay watered when watered
+        again, i.e. you cannot unwater land</li>
+    <li style="list-style-type:disc">The farmer will still be watering even if some of the expected squares
+    are outside of the whole farm (as shown in the Example 3.1.2)</li>
+</ul>
+
+
+
+<div class="accordion" id="accordioni">
+  <div class="card">
+    <div class="card-header" id="headingi">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsei" aria-expanded="true" aria-controls="collapsei">
+          Example 3.1.1: Watering a Square
+        </button>
+    </div>
+
+    <div id="collapsei" class="collapse" aria-labelledby="headingi" data-parent="#accordioni">
+      <div class="card-body">
+  
+<pre is="tty"><kbd is="sh">./cse_valley</kbd>
+Welcome to CSE Valley, farmer!
+Congratulations, you have received 60 seeds.
+How many different seeds do you wish to have? <kbd>3</kbd>
+Enter the names of the seeds to be given:
+<kbd>b</kbd>
+<kbd>a</kbd>
+<kbd>c</kbd>
+Game Started!
+Enter command: <kbd>&gt;</kbd>
+Enter command: <kbd>&gt;</kbd>
+Enter command: <kbd>&gt;</kbd>
+Enter command: <kbd>v</kbd>
+Enter command: <kbd>v</kbd>
+Enter command: <kbd>v</kbd>
+Enter command: <kbd>w 2</kbd>
+Enter command: <kbd>l</kbd>
+|---|---|---|---|---|---|---|---|
+|   |  W|  W|  W|  W|  W|   |   |
+|---|---|---|---|---|---|---|---|
+|   |  W|  W|  W|  W|  W|   |   |
+|---|---|---|---|---|---|---|---|
+|   |  W|  W|  W|  W|  W|   |   |
+|   |   |   | f |   |   |   |   |
+|   |   |   | v |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |  W|  W|  W|  W|  W|   |   |
+|---|---|---|---|---|---|---|---|
+|   |  W|  W|  W|  W|  W|   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+Enter command: <span class="eof"></span>
+</pre>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="accordion" id="accordionj">
+  <div class="card">
+    <div class="card-header" id="headingj">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsej" aria-expanded="true" aria-controls="collapsej">
+          Example 3.1.2: Square Watering Near the Edges
+        </button>
+    </div>
+
+    <div id="collapsej" class="collapse" aria-labelledby="headingj" data-parent="#accordionj">
+      <div class="card-body">
+  
+<pre is="tty"><kbd is="sh">./cse_valley</kbd>
+Welcome to CSE Valley, farmer!
+Congratulations, you have received 60 seeds.
+How many different seeds do you wish to have? <kbd>3</kbd>
+Enter the names of the seeds to be given:
+<kbd>b</kbd>
+<kbd>a</kbd>
+<kbd>c</kbd>
+Game Started!
+Enter command: <kbd>w 1</kbd>
+Enter command: <kbd>l</kbd>
+|---|---|---|---|---|---|---|---|
+|  W|  W|   |   |   |   |   |   |
+| f&gt;|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|  W|  W|   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+Enter command: <span class="eof"></span>
+</pre>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+<div id="stage-3.2">
+
+<h3>3.2: Advancing to the Next Day and Harvesting</h3>
+<h4>a. Advancing to the Next Day</h4>
+<p>Once you have done your farming for the day, you can
+    go to the next day using the <strong>Advancing to the Next Day</strong> command, which is specified by the
+    character <code class="red_code">n</code>. It should give an output of which day you are heading into. For example, the first
+    time you enter the command, it should say </p>
+<pre is="tty">  Advancing to the next day... Day 2, let's go!
+</pre>
+
+<p>When you advance to the next day, the following things
+  will happen:</p>
+
+<ul class="bulleted-list">
+  <li style="list-style-type:disc">If a seed has been planted in a particular <code>struct land</code> and
+      that particular <code>struct land</code> has been watered, the seed would have grown into a plant that is
+      able to be harvested on the day.
+  </li>
+  <li style="list-style-type:disc">Seeds that are not watered when advancing to the next day will die 
+  </li> 
+  <li style="list-style-type:disc">Harvestable plants that are not harvested when advancing to the next day
+      will die
+  </li>
+  <li style="list-style-type:disc">
+    All land becomes unwatered and farmer is reinitialised to be facing to the right and located at the top left
+    corner of the farm (just like at the start of the simulation)
+  </li>
+</ul>
+
+<aside class="note">
+  Harvestable/Grown seeds are shown in <code class="red_code">print_land</code> by the seed
+  name's capitalisation (e.g. from <code>'a'</code> to
+<code>'A'</code>)
+</aside>
+<aside class="note">
+  Dead seeds are shown in <code class="red_code">print_land</code> as if there is no seed on a <code>struct land</code>
+</aside>
+
+<h4>b. Harvesting Adjacent Land</h4>
+<p>Aside from planting and watering into a land, you can
+    also harvest plants. Just like the water adjacent land command, a farmer could harvest an adjacent land
+    that they are currently facing using the character <code class="red_code">h</code>. When harvesting a plant,
+    you get <code>5</code> seeds of the same type. 
+</p>
+<ul>
+    <li>
+        When a plant is able to be harvested, it should output: 
+<pre is="tty">  Plant 'X' was harvested, resulting in 5 'x' seed(s)
+</pre>
+        where <code>X</code> is the harvested plant (i.e. uppercase form) and <code>x</code> is the name of the seeds received
+    (i.e. lowercase form).
+    </li>
+</ul>
+
+<h4>Invalid Inputs and Clarifications</h4>
+<ul class="bulleted-list">
+  <li style="list-style-type:disc">Trying to harvest a plant from a land that 
+    is outside the boundary of the farm will not do anything. </li>
+</ul>
+
+
+<div class="accordion" id="accordionk">
+  <div class="card">
+    <div class="card-header" id="headingk">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsek" aria-expanded="true" aria-controls="collapsek">
+          Example 3.2.1: Advancing and Harvesting
+        </button>
+    </div>
+
+    <div id="collapsek" class="collapse" aria-labelledby="headingk" data-parent="#accordionk">
+      <div class="card-body">
+  
+<pre is="tty"><kbd is="sh">./cse_valley</kbd>
+Welcome to CSE Valley, farmer!
+Congratulations, you have received 60 seeds.
+How many different seeds do you wish to have? <kbd>3</kbd>
+Enter the names of the seeds to be given:
+<kbd>b</kbd>
+<kbd>a</kbd>
+<kbd>c</kbd>
+Game Started!
+Enter command: <kbd>p a</kbd>
+Enter command: <kbd>o w</kbd>
+Enter command: <kbd>v</kbd>
+Enter command: <kbd>p b</kbd>
+Enter command: <kbd>o w</kbd>
+Enter command: <kbd>l</kbd>
+|---|---|---|---|---|---|---|---|
+|b  |a W|a  |a  |a  |a  |a  |a  |
+| f |   |   |   |   |   |   |   |
+| v |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|b W|   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|b  |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|b  |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|b  |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|b  |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|b  |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|b  |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+Enter command: <kbd>n</kbd>
+  Advancing to the next day... Day 2, let's go!
+Enter command: <kbd>l</kbd>
+|---|---|---|---|---|---|---|---|
+|   |A  |   |   |   |   |   |   |
+| f&gt;|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|B  |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+Enter command: <kbd>a</kbd>
+  Seeds at your disposal:
+  - 12 seed(s) with the name 'b'
+  - 12 seed(s) with the name 'a'
+  - 20 seed(s) with the name 'c'
+Enter command: <kbd>h</kbd>
+  Plant 'A' was harvested, resulting in 5 'a' seed(s)
+Enter command: <kbd>a</kbd>
+  Seeds at your disposal:
+  - 12 seed(s) with the name 'b'
+  - 17 seed(s) with the name 'a'
+  - 20 seed(s) with the name 'c'
+Enter command: <kbd>l</kbd>
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+| f&gt;|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|B  |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+Enter command: <kbd>n</kbd>
+  Advancing to the next day... Day 3, let's go!
+Enter command: <kbd>l</kbd>
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+| f&gt;|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+Enter command: <span class="eof"></span>
+</pre>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+<div id="stage-3.3">
+
+<h3>3.3: Trading Seeds</h3>
+<p>An important activity of DPST1091 Land is the
+    ability to trade your seeds with others. This is done through the <strong>Trading Seeds
+    </strong>command using the <code class="red_code">t</code> argument, followed by <code>3</code> (three)
+    additional arguments: the name of the seed that you <code class="red_code">have</code>
+    and wish to trade and its <code class="red_code">amount</code>,
+    in adition to the name of the seed that you <code class="red_code">want</code> to trade for.</p>
+
+<p>Trading can result in you receiving seeds you have not had before. If this happens,
+  you should ensure they appear <b>first</b> when you use the <code class="red_code">a</code> command.
+  A portion of the marks for seed trading relies on you implementing this behaviour correctly.
+</p>
+
+<p>A few things to note:</p>
+<ul class="bulleted-list">
+  <li style="list-style-type:disc">When the farmer tries to put in seed names that are not lowercase letters, your program should
+    output:
+<pre is="tty">  Seed name has to be a lowercase letter
+</pre>    
+  </li> 
+  <li style="list-style-type:disc">When the farmer tries to put in a negative number of seeds, your program should
+    output:
+<pre is="tty">  You can't trade negative seeds
+</pre>    
+  </li>  
+  <li style="list-style-type:disc">When the farmer does not have the seeds that they wish to trade, your program should do nothing except
+    output:
+<pre is="tty">  You don't have the seeds to be traded
+</pre>       
+</li>
+  <li style="list-style-type:disc">When the farmer does not have enough seeds that they wish to trade, your program should
+    output:
+<pre is="tty">  You don't have enough seeds to be traded
+</pre>     
+  </li>
+  <li style="list-style-type:disc">You should check for validity in the order listed above</li>
+</ul>
+
+
+
+
+
+
+<div class="accordion" id="accordionl">
+  <div class="card">
+    <div class="card-header" id="headingl">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsel" aria-expanded="true" aria-controls="collapsel">
+          Example 3.3.1: Trading
+        </button>
+    </div>
+
+    <div id="collapsel" class="collapse" aria-labelledby="headingl" data-parent="#accordionl">
+      <div class="card-body">
+  
+<pre is="tty"><kbd is="sh">./cse_valley</kbd>
+Welcome to CSE Valley, farmer!
+Congratulations, you have received 60 seeds.
+How many different seeds do you wish to have? <kbd>3</kbd>
+Enter the names of the seeds to be given:
+<kbd>b</kbd>
+<kbd>c</kbd>
+<kbd>a</kbd>
+Game Started!
+Enter command: <kbd>a</kbd>
+  Seeds at your disposal:
+  - 20 seed(s) with the name 'b'
+  - 20 seed(s) with the name 'c'
+  - 20 seed(s) with the name 'a'
+Enter command: <kbd>t a -5 b</kbd>
+  You can't trade negative seeds
+Enter command: <kbd>t d 5 b</kbd>
+  You don't have the seeds to be traded
+Enter command: <kbd>t a 21 b</kbd>
+  You don't have enough seeds to be traded
+Enter command: <kbd>t c 10 b</kbd>
+Enter command: <kbd>a</kbd>
+  Seeds at your disposal:
+  - 30 seed(s) with the name 'b'
+  - 10 seed(s) with the name 'c'
+  - 20 seed(s) with the name 'a'
+Enter command: <kbd>t c 10 d</kbd>
+Enter command: <kbd>a</kbd>
+  Seeds at your disposal:
+  - 10 seed(s) with the name 'd'
+  - 30 seed(s) with the name 'b'
+  - 0 seed(s) with the name 'c'
+  - 20 seed(s) with the name 'a'
+Enter command: <span class="eof"></span>
+</pre>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<h3>Testing &amp; Submission</h3>
+<p>
+  Are you finished with this stage? If so, you should make sure to do the following:
+</p>
+<ul>
+  <li>
+    Run <code>1091 style</code>, and to clean up any issues a human might have reading
+    your code. Don't forget -- <b>20%</b> of your mark in the assignment is based on
+    style!
+  </li>
+  <li>
+    Autotest for this stage of the assignment by running the <code>autotest-stage</code>
+    command as shown below.
+  </li>
+  <li>
+    Remember -- <i>give early, and give often</i>. Only your last submission counts, but why not
+    be safe and submit right now?
+  </li>
+</ul>
+
+<pre is="tty"><kbd is="sh">1091 style cse_valley.c</kbd>
+<kbd is="sh">1091 autotest-stage 03 cse_valley </kbd>
+<kbd is="sh">give dp1091 ass1_cse_valley cse_valley.c</kbd>
+</pre>
+
+
+
+    </div>
+<div class="toc-switchable tab-pane fade active show" id="stage-4-tab" role="tab-panel">
+      
+<h2 id="stage-4">Stage 4</h2>
+
+<aside class="rationale">
+
+    <p><b>Why does this stage exist?</b> This stage tests you on a harder program alteration, and potentially being
+        able to work with multiple arrays at once. These skills are not essential in DPST1091, but may be tested in
+        the most complicated exam questions. There will also be reduced support from tutors means you will need to 
+        work on finding your own resources to complete this work.
+    </p>
+    <p>
+        <b>Who do we expect to complete this stage?</b> Students who are enjoying DPST1091 
+        and want to push themselves. 
+    </p>
+    <p>
+        <b>What help will tutors provide to students?</b> Tutors may give general debugging
+        and programming advice, and may give a very general overview of the stage. They won't give specific
+        advice on how to complete this stage, nor give help on specific bugs you may encounter.
+    </p>
+    <p>
+        <b>How many marks will I get?</b> Completing this stage, with good style, is worth around a 100% mark.
+    </p>
+</aside>
+
+<p>In this stage, you will implement:</p>
+<ul>
+  <li>
+    The ability for the state of the land to change depending on the disaster.
+  </li>
+</ul>
+
+
+<p>Each farmer also wants to be able to simulate what happens when their farm is hit
+    by natural disasters. There are two possible natural disasters that could exist
+    in DPST1091 Land, droughts and wind-storms. More information about each 
+    natural disaster can be found below.
+</p>
+
+<div id="stage-4.1">
+
+<h3>4.1: Natural Disasters - Droughts</h3>
+<p>
+    In order for any plant in the land to survive in a drought, it needs to not be surrounded by too many
+    other plants. The more plants nearby, the more competition there is for the nutrients in the
+    soil. Hence, if there are too many plants surrounding a plant, then that particular plant will die.
+    The <strong>Droughts</strong> command is specified by the character <code class="red_code">d</code>
+    to specify that it is a natural disaster, followed by another <code class="red_code">d</code> to further
+    specify that it is a drought, followed by the minimum <code class="red_code">number</code> of plants in the plant's adjacent lands
+    for a plant to die following this command.
+</p>
+
+<p>Adjacent lands are the lands that are within 1 column/row away from a particular land.
+    For example, surrounding lands of <code>(1, 1)</code>
+    are <code>(0, 0)</code>, <code>(0, 1)</code>, <code>(0, 2)</code>,
+    <code>(1, 0)</code>, <code>(1, 2)</code>, <code>(2, 0)</code>, <code>(2, 1)</code>,
+    and <code>(2, 2)</code>.
+</p>
+
+<h4>Invalid Inputs and Clarifications</h4>
+<ul class="bulleted-list">
+    <li style="list-style-type:disc">
+        Nothing happens to the state of water in a land in a disaster
+    </li>
+</ul>
+
+
+<div class="accordion" id="accordionm">
+  <div class="card">
+    <div class="card-header" id="headingm">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsem" aria-expanded="true" aria-controls="collapsem">
+          Example 4.1.1: Natural Disasters - Droughts
+        </button>
+    </div>
+
+    <div id="collapsem" class="collapse" aria-labelledby="headingm" data-parent="#accordionm">
+      <div class="card-body">
+  
+<pre is="tty"><kbd is="sh">./cse_valley</kbd>
+...
+...Some earlier commands were used and not shown here...
+...
+Enter command: <kbd>l</kbd>
+|---|---|---|---|---|---|---|---|
+|a  |a  |   |b  |b  |b  |   |   |
+| f&gt;|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|a  |a  |   |b  |b  |b  |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |b  |b  |b  |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|d  |d  |d  |d  |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|d  |d  |d  |d  |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|d  |   |d  |d  |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|d  |d  |d  |d  |   |   |c  |   |
+|---|---|---|---|---|---|---|---|
+Enter command: <kbd>d d 5</kbd>
+Enter command: <kbd>l</kbd>
+|---|---|---|---|---|---|---|---|
+|a  |a  |   |b  |   |b  |   |   |
+| f&gt;|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|a  |a  |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |b  |   |b  |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|d  |   |   |d  |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|d  |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|d  |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|d  |d  |d  |d  |   |   |c  |   |
+|---|---|---|---|---|---|---|---|
+Enter command: <span class="eof"></span>
+</pre>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+<div id="stage-4.2">
+
+<h3>4.2: Natural Disasters - Wind Storms</h3>
+<p>
+    Unlike in a drought, in order for any plant to survive in a wind storm,
+    it needs to now be surrounded by a certain number of plants so that it can be shielded in a cluster
+    to survive the wind. Hence, if there are too few plants
+    surrounding a plant, then that particular plant will die after a wind storm.
+    The <strong>Wind Storm</strong> command is specified by the character <code class="red_code">d</code>
+    to specify that it is a natural disaster, followed by <code class="red_code">w</code> to 
+    specify that it is a wind storm, followed by the minimum <code class="red_code">number</code> of plants in the plant's adjacent lands
+    for a plant to survive following this command.
+</p>
+
+
+<div class="accordion" id="accordionn">
+  <div class="card">
+    <div class="card-header" id="headingn">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsen" aria-expanded="true" aria-controls="collapsen">
+          Example 4.2.1: Wind Storms
+        </button>
+    </div>
+
+    <div id="collapsen" class="collapse" aria-labelledby="headingn" data-parent="#accordionn">
+      <div class="card-body">
+  
+<pre is="tty"><kbd is="sh">./cse_valley</kbd>
+...
+...Some earlier commands were used and not shown here...
+...
+Enter command: <kbd>l</kbd>
+|---|---|---|---|---|---|---|---|
+|a  |a  |   |b  |b  |b  |   |   |
+| f&gt;|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|a  |a  |   |b  |b  |b  |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |b  |b  |b  |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|d  |d  |d  |d  |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|d  |d  |d  |d  |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|d  |   |d  |d  |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|d  |d  |d  |d  |   |   |c  |   |
+|---|---|---|---|---|---|---|---|
+Enter command: <kbd>d w 5</kbd>
+Enter command: <kbd>l</kbd>
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |b  |   |   |   |
+| f&gt;|   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |b  |b  |b  |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |b  |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |d  |d  |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |d  |d  |d  |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |d  |d  |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+|   |   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|---|
+Enter command: <span class="eof"></span>
+</pre>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<h3>Testing &amp; Submission</h3>
+<p>
+  Are you finished with this stage? If so, you should make sure to do the following:
+</p>
+<ul>
+  <li>
+    Run <code>1091 style</code>, and to clean up any issues a human might have reading
+    your code. Don't forget -- <b>20%</b> of your mark in the assignment is based on
+    style!
+  </li>
+  <li>
+    Autotest for this stage of the assignment by running the <code>autotest-stage</code>
+    command as shown below.
+  </li>
+  <li>
+    Remember -- <i>give early, and give often</i>. Only your last submission counts, but why not
+    be safe and submit right now?
+  </li>
+</ul>
+
+<pre is="tty"><kbd is="sh">1091 style cse_valley.c</kbd>
+<kbd is="sh">1091 autotest-stage 04 cse_valley </kbd>
+<kbd is="sh">give dp1091 ass1_cse_valley cse_valley.c</kbd>
+</pre>
+
+
+
+    </div>
+</div>
+<script>
+   // This code ensures the ToC will also change tabs as necessary.
+   
+   window.addEventListener('hashchange', () => accessRightSection());
+   async function accessRightSection() {
+    const arr =  location.hash.split(".");
+    const tabButton = document.querySelector(`a.nav-link[href="${arr[0]}-tab"][role="tab"]`);
+    if (tabButton) {
+      tabButton.click();
+      tabButton.scrollIntoView();
+      window.scrollBy(0, -100);
+      await new Promise(r => setTimeout(r, 200));
+      window.location.assign(location.hash);
+
+    }
+    window.scrollBy(0, -100);
+   }
+  </script>
+<h1 id="table-of-commands">Table of Commands</h1>
+<div class="card">
+<div class="card-header">
+    Summary of All Commands
+  </div>
+<div class="card-body thinner">
+<table class="table">
+<tbody><tr>
+<th style="border-top: 0"><b>Stage</b></th><th style="border-top: 0"><b>Command Name</b></th><th style="border-top: 0"><b>Command Argument</b></th><th style="border-top: 0"><b>Additional Arguments</b></th>
+</tr>
+<tr>
+<td><a href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#stage-1.2">1.2</a></td><td>Printing All Seeds</td> <td><code>a</code></td> <td></td>
+</tr>
+<tr>
+<td><a href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#stage-1.3">1.3</a></td><td>Printing One Seed</td> <td><code>s</code></td> <td><code>seed_name</code></td>
+</tr>
+<tr>
+<td><a href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#stage-2.1">2.1</a></td><td>Printing Land</td> <td><code>l</code></td><td></td>
+</tr>
+<tr>
+<td><a href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#stage-2.2">2.2a</a></td><td>Moving Upwards</td> <td><code>^</code></td><td></td>
+</tr>
+<tr>
+<td><a href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#stage-2.2">2.2b</a></td><td>Moving Right</td> <td><code>&gt;</code></td><td></td>
+</tr>
+<tr>
+<td><a href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#stage-2.2">2.2c</a></td><td>Moving Downwards</td> <td><code>v</code></td><td></td>
+</tr>
+<tr>
+<td><a href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#stage-2.2">2.2d</a></td><td>Moving Left</td> <td><code>&lt;</code></td><td></td>
+</tr>
+<tr>
+<td><a href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#stage-2.3">2.3a</a></td><td>Watering an Adjacent Land</td> <td><code>o w</code></td><td></td>
+</tr>
+<tr>
+<td><a href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#stage-2.3">2.3b</a></td><td>Planting on an Adjacent Land</td> <td><code>o p</code></td><td><code>seed_name</code></td>
+</tr>
+<tr>
+<td><a href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#stage-2.4">2.4</a></td><td>Scattering Seeds</td> <td><code>p</code></td><td><code>seed_name</code></td>
+</tr>
+<tr>
+<td><a href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#stage-3.1">3.1</a></td><td>Watering a Square</td> <td><code>w</code></td><td><code>square_size</code></td>
+</tr>
+<tr>
+<td><a href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#stage-3.2">3.2a</a></td><td>Advancing to the Next Day</td> <td><code>n</code></td><td></td>
+</tr>
+<tr>
+<td><a href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#stage-3.2">3.2b</a></td><td>Harvesting an Adjacent Plant</td> <td><code>h</code></td><td></td>
+</tr>
+<tr>
+<td><a href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#stage-3.3">3.3</a></td><td>Trading Seeds</td> <td><code>t</code></td><td><code>src_name src_amt dst_name</code></td>
+</tr>
+<tr>
+<td><a href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#stage-4.1">4.1</a></td><td>Expriencing Droughts</td> <td><code>d d</code></td><td><code>min_num_plants_to_die</code></td>
+</tr>
+<tr>
+<td><a href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#stage-4.2">4.2</a></td><td>Experiencing Wind Storms</td> <td><code>d w</code></td><td><code>min_num_plants_to_survive</code></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+
+
+
+
+
+<h1 id="assessment" class="mb-3">Assessment</h1>
+<h2 id="attribution">Attribution of Work</h2>
+<p>
+This is an individual assignment. The work you submit must be your own work and only your
+work apart from exceptions below. Joint work is not permitted. At no point should a student
+read or have a copy of another student's assignment code.
+</p><p>
+You may use small amounts (&lt; 10 lines) of general purpose code (not
+specific to the assignment) obtained from
+sites such as Stack Overflow or other publicly available resources.
+You should attribute clearly the source of this code in a comment
+with it.
+</p><p>
+You are not permitted to request help with the assignment apart from
+in the course forum, help sessions or from course lecturers or tutors.
+</p><p>
+Do not provide or show your assignment work to any other person (
+including by posting it on the forum) apart from the teaching staff of DPST1091.
+When posting on the course forum, teaching staff will be able to view the assignment
+code you have recently autotested or submitted with give.
+</p><p>
+The work you submit must otherwise be entirely your own work.  
+Submission of work partially or completely derived
+from any other person or jointly written with any other person is not permitted.
+The penalties for such an offence may include negative marks,
+automatic failure of the course and possibly other academic discipline.
+Assignment submissions will be examined both automatically and manually
+for such issues.
+</p><p>
+Relevant scholarship authorities will be informed if students holding scholarships
+are involved in an incident of plagiarism or other misconduct.
+If you knowingly provide or show your assignment work to another person for any
+reason, and work derived from it is submitted you may be penalised, even
+if the work was submitted without your knowledge or consent.  This may
+apply even if your work is submitted by a third party unknown to you.
+</p><p>
+Note, you will not be penalised if your work is
+taken without your consent or knowledge.
+
+</p><h2 id="submission">Submission of Work</h2>
+<p>
+You should submit intermediate versions of your assignment. Every time you
+autotest or submit, a copy will be saved as a backup. 
+</p><p>
+Every time you work on the assignment and make some progress you
+should  submit it using the <code>give</code> command below.
+</p><p>
+It is fine if intermediate versions do not compile or otherwise
+fail submission tests.
+</p><p>
+Only the final submitted version of your assignment will be marked.
+</p><p>
+You submit your work like this:
+</p><p>
+
+</p><pre is="tty"><kbd is="sh">give dp1091 ass1_cse_valley cse_valley.c</kbd>
+</pre>
+
+
+
+<h2 id="assessment-scheme">Assessment Scheme</h2>
+<p>
+This assignment will contribute 15% to your final mark.
+</p><p>
+80% of the marks for this assignment will be based on the performance
+of the code you write in <code>cse_valley.c</code>
+</p><p>
+20% of the marks for this assignment will come from hand marking of the readability
+of the C you have written.  These marks will be awarded on the basis of clarity,
+commenting, elegance and style.  In other words, your tutor will assess how
+easy it is for a human to read and understand your program. The utility <code>1091 style</code>
+can help with this!
+</p><p>
+Marks for your performance will be allocated roughly according to the below scheme.
+
+</p><table class="table table-bordered table-striped">
+  <tbody><tr><td>100% for Performance</td><td>Completely working implementation of Stages 1-4
+  </td></tr><tr><td>85% for Performance</td><td>Completely working implementation of Stages 1-3
+  </td></tr><tr><td>70% for Performance</td><td>Completely working implementation of Stage 1 and 2
+  </td></tr><tr><td>60% for Performance</td><td>Partially working implementation of Stage 2
+  </td></tr><tr><td>50% for Performance</td><td>Completely working implementation of Stage 1
+  </td></tr><tr><td> &lt; 50% for Performance</td><td>Manually assessed based on closeness to a working program.
+</td></tr></tbody></table>
+
+<p>
+Marks for your style will be allocated roughly according to the scheme below
+
+</p><table class="table table-bordered table-striped">
+  <tbody><tr><td>100% for Style</td><td>Perfect style
+      </td></tr><tr><td>90% for Style</td><td> Great style, almost all style characteristics perfect.
+  </td></tr><tr><td>80% for Style</td><td>Good style, one or two style characteristics not well done.
+  </td></tr><tr><td>70% for Style</td><td>Good style, a few style characteristics not well done.
+  </td></tr><tr><td>60% for Style</td><td>OK style, an attempt at most style characteristics.
+  </td></tr><tr><td> &lt;= 50% for Style</td><td>An attempt at style.
+</td></tr></tbody></table>
+
+Note that the following penalties apply to your total mark for plagiarism:
+
+<table class="table table-bordered table-striped">
+<tbody><tr><td>0 for the assignment</td><td>Knowingly providing your work to anyone and it is subsequently submitted (by anyone).
+</td></tr><tr><td>0 for the assignment</td><td>Submitting any other person's work. This includes joint work.
+</td></tr><tr><td>0 FL for DPST1091</td><td>Paying another person to complete work. Submitting another person's work without their consent.
+</td></tr></tbody></table>
+
+<p>
+The following is an indicative list of characteristics of your program that will be assessed,
+though your program will be assessed wholistically so other charactersitics may be assessed too:
+
+</p><ul>
+    <li>Header Commenting.
+    </li><li>Consistent, sensible indenting.
+    </li><li>Using Blank Lines &amp; Whitespace.
+    </li><li>Using constants.
+    </li><li>Decomposing code into functions where relevent (especially after Stage 2).
+    </li><li>Using comments effectively (at least at top of functions, and not containing irrelevant info).
+</li></ul>
+
+<p>
+The course staff may vary the assessment scheme after inspecting
+the assignment submissions but it will remain broadly similar to the description above.
+
+</p><h2 id="due-date">Due Date</h2>
+
+This assignment is due  Friday 4 March 23:59:59
+<p>
+If your assignment is submitted after this date, each hour it is late reduces
+the maximum mark it can achieve by 1%.
+For example if an assignment worth 74% was submitted
+10 hours late, the late submission would have no effect.
+If the same assignment was submitted 30 hours late it would be awarded
+70%, the maximum mark it can achieve at that time.
+
+</p><h2 id="change-log">Change Log</h2>
+<dl class="row">
+<dt class="col-3">
+    Version 1.0<br>
+    <small>(2021-08-02 20:00)</small>
+  </dt>
+  <dd class="col-9">
+    <ul>
+      <li>Released first assignment version.</li>
+    </ul>
+  </dd>
+</dl>
+
+
+
+</div> <!-- col contents -->
+<div class="d-none d-lg-block col-lg-2">
+  <nav id="toc" data-toggle="toc"><ul class="nav navbar-nav"><li><a class="nav-link active" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#CSE%20Valley">CSE Valley</a><ul class="nav navbar-nav"><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#overview">Overview</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#the-commands">The Commands</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#allowed-c-features">Allowed C Features</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#reference-implementation">Reference Implementation</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#starter-code">How To Get Started</a></li><li><a class="nav-link active" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#about-the-starter-code">About the Starter Code</a></li></ul></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#your-tasks">Your Tasks</a><ul class="nav navbar-nav"><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#stage-1">Stage 1</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#stage-2">Stage 2</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#stage-3">Stage 3</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#stage-4">Stage 4</a></li></ul></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#table-of-commands">Table of Commands</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#assessment">Assessment</a><ul class="nav navbar-nav"><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#attribution">Attribution of Work</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#submission">Submission of Work</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#assessment-scheme">Assessment Scheme</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#due-date">Due Date</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html#change-log">Change Log</a></li></ul></li></ul></nav>
+</div> <!-- col toc -->
+</div> <!-- row -->
+<script>
+  $(function() {
+  var navSelector = "#toc";
+  var $myNav = $(navSelector);
+  Toc.init($myNav);
+  $("body").scrollspy({
+    target: navSelector
+  });
+});
+</script>
+
+
+
+
+</main>
+
+<footer class="mt-3 pt-3 bg-dark text-center no-print">
+<p class="text-muted">
+<strong>DPST1091 22T1: Programming Fundamentals!</strong>
+is brought to you by <br>
+the <a href="https://www.cse.unsw.edu.au/">School of Computer Science and Engineering</a><br>
+at the <a href="https://www.unsw.edu.au/">University of New South Wales</a>, Sydney.<br>
+For all enquiries, please email the class account at
+<a href="mailto:@cse.unsw.edu.au">dp1091@cse.unsw.edu.au</a><br>
+
+<small>CRICOS Provider 00098G</small>
+</p>
+
+
+</footer>
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
