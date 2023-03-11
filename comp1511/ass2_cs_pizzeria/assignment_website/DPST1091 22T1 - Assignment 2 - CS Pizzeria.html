@@ -1,0 +1,2891 @@
+<!DOCTYPE html>
+<!-- saved from url=(0068)https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass2/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+    
+    DPST1091 22T1 - 
+Assignment 2 - CS Pizzeria
+
+    
+</title><link rel="canonical" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/">
+
+<link rel="stylesheet" href="./DPST1091 22T1 - Assignment 2 - CS Pizzeria_files/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="./DPST1091 22T1 - Assignment 2 - CS Pizzeria_files/course.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="./DPST1091 22T1 - Assignment 2 - CS Pizzeria_files/popper.min.js.download" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="./DPST1091 22T1 - Assignment 2 - CS Pizzeria_files/bootstrap.min.js.download" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="./DPST1091 22T1 - Assignment 2 - CS Pizzeria_files/course.js.download"></script>
+
+
+<link rel="icon" type="image/png" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/flask.cgi/static/favicon.ico?1271641727963.0">
+
+<!-- <script async src="https://static.codepen.io/assets/embed/ei.js"></script> -->
+
+<!-- MathJax. -->
+
+
+
+<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css">
+<!-- add after bootstrap.min.js -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style>
+
+
+
+<style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body class="d-flex flex-column" style="min-height: 100vh;" data-new-gr-c-s-check-loaded="14.1052.0" data-gr-ext-installed=""><div id="MathJax_Message" style="display: none;"></div>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light no-print" id="header-navbar">
+  <div class="container">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navmenu" aria-controls="navmenu" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <a class="navbar-brand" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/">
+        DPST1091 22T1
+    </a>
+
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active"><a class="nav-link" href="https://teams.microsoft.com/l/team/19%3a217T_M_KAA8fHXJa8hT9IJS89r2DqsQeN5ouUAmi1lM1%40thread.tacv2/conversations?groupId=7572f827-8dcd-46a7-bf48-a4db6ed4e4bd&amp;tenantId=3ff6cfa4-e715-48db-b8e1-0867b9f9fba3">Forum</a></li>
+        <li class="nav-item active"><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/student/">Submissions</a></li>
+        <li class="nav-item active"><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/history/">History</a></li>
+
+        
+        <li class="nav-item active"><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass1/index.html">Assignment 1</a></li>
+        
+
+        
+        <li class="nav-item active"><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass2/index.html">Assignment 2</a></li>
+        
+
+        
+        
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<main class="container" aria-label="Content" style="flex: 1; padding-top: 4rem;">
+
+
+<header>
+
+<h1 class="text-center" id="assignment-2-cs-pizzeria">
+Assignment 2 - CS Pizzeria
+</h1>
+
+</header>
+
+
+<style>
+h1::before,h2::before {
+  content: '';
+  display: block;
+  height:      50px;
+  margin-top: -50px;
+  visibility: hidden;
+}
+
+#toc {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 70px;
+}
+</style>
+<div class="row">
+
+
+<div class="col-lg-10 col-12">
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+  .must_change {
+    background-color: #FFFFD0;
+  }
+
+  .cant_change {
+    background-color: #FFE0FF;
+  }
+  
+  .nav-tabs .nav-item {
+    font-size: 1.5em;
+  }
+
+  .accordion .btn:before {
+    content: "−   ";
+    padding-right: 25px;
+    float: left;
+    vertical-align: middle;
+  }
+
+  .accordion .btn.collapsed:before {
+    /* symbol for "collapsed" panels */
+    content: "＋ ";
+  }
+
+  .accordion .btn {
+    font-size: 1.5em;
+  }
+
+  .tab-content {
+    border: 1px solid #dee2e6;
+    padding: 5px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p {
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+  }
+
+  code {
+    margin-right: 0.3em;
+    margin-left: 0.3em;
+    tab-size: 2;
+    border-radius: 3px;
+    padding: 0.2em 0.4em;
+    font-size: 85%;
+    background: rgba(135, 131, 120, 0.15);
+    color: #eb5757;
+  }
+
+  .code-wrap {
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+
+  .accordion {
+    margin-bottom: 5px;
+  }
+
+  img {
+    /* Prevent horizontal scrolling on mobile  */
+    max-width: 100%;
+    /* Horizontally center images */
+    display: block;
+    margin: 0 auto;
+  }
+
+  .btn.hide-middle {
+    background: rgba(200, 200, 200, 0.9);
+    position: relative;
+    top: -20px;
+  }
+
+  div.hide-middle {
+    max-height: 100px;
+    overflow-y: hidden;
+  }
+</style>
+
+
+<h1 id="cs-pizzeria">CS Pizzeria</h1>
+<div class="alert alert-info">
+<p>Current version: 1.0.0</p>
+</div>
+<p>
+  Pantea wants to start a pizza shop (pizzeria), but she has no way
+  to manage it. How will they keep track of their orders? How will they keep
+  track of their finances? DPST1091 is requesting you to build a program
+  which will help them manage their pizzeria.
+</p>
+<h2 id="overview">Overview</h2>
+<h3>What is CS Pizzeria?</h3>
+<p>
+  For this assignment, you will be implementing a program which helps to manage
+  a pizzeria. You do not need any prior knowledge regarding managing a
+  restaurant or cooking pizzas to complete this assignment.
+</p>
+<p>In Stage 1, you are required to manage a linked list of orders in the pizzeria.
+<b>The following diagram provides a visual representation of what you are implementing</b></p>
+<figure class="image">
+<img src="./DPST1091 22T1 - Assignment 2 - CS Pizzeria_files/pizzeria-stage1-layout.svg">
+</figure>
+<p>In Stage 2, these orders will now have a linked list of required ingredients.
+<b>You do not need to understand the following diagram until you complete Stage 1.</b></p>
+<figure class="image">
+<img src="./DPST1091 22T1 - Assignment 2 - CS Pizzeria_files/pizzeria-stage2-layout.svg">
+</figure>
+<p>In Stage 3, the pizzeria will now have a linked list of stocked ingredients.
+<b>You do not need to understand the following diagram until you complete Stage 2.</b></p>
+<figure class="image">
+<img src="./DPST1091 22T1 - Assignment 2 - CS Pizzeria_files/pizzeria-stage3-layout.svg">
+</figure>
+<p>
+  In Stage 4, the pizzeria will be structured the same but orders can now
+  be completed and ingredients can be saved/loaded to/from files.
+</p>
+<h3>Provided Structs</h3>
+<div class="alert alert-info">
+<p>
+    This section details what is currently in the starter code. The images
+    above are what your assignment's <code>struct pizzeria</code> at the
+    end of each stage.
+  </p>
+</div>
+<p>You have been provided with the skeleton of three existing <code>struct</code>
+data types to help you with your implementation of this simulation. </p>
+<p>The structs and their purposes are shown below.</p>
+<ul class="bulleted-list">
+<li style="list-style-type:disc"><code>struct pizzeria</code>
+<ul class="bulleted-list">
+<li style="list-style-type:circle">
+<strong>Purpose:</strong> To store the state of the pizzeria.
+          </li>
+</ul>
+<ul class="bulleted-list">
+<li style="list-style-type:circle">
+<strong>Contains: </strong>
+</li>
+<ul>
+<li>
+<code>struct order *orders</code> - points to the head of the
+            orders list or <code>NULL</code>.
+          </li>
+</ul>
+</ul>
+</li>
+</ul>
+<ul class="bulleted-list">
+<li style="list-style-type:disc"><code>struct order</code>
+<ul class="bulleted-list">
+<li style="list-style-type:circle">
+<strong>Purpose:</strong> To store information about a single order.
+          </li>
+</ul>
+<ul class="bulleted-list">
+<li style="list-style-type:circle">
+<strong>Contains: </strong>
+</li>
+<ul>
+<li>
+<code>struct order *next</code> - points to the next order in the
+            linked list or <code>NULL</code>.
+          </li>
+</ul>
+</ul>
+</li>
+</ul>
+<ul class="bulleted-list">
+<li style="list-style-type:disc"><code>struct ingredient</code>
+<ul class="bulleted-list">
+<li style="list-style-type:circle">
+<strong>Purpose:</strong> To store information about a single
+            ingredient.
+          </li>
+</ul>
+<ul class="bulleted-list">
+<li style="list-style-type:circle">
+<strong>Contains: </strong>
+</li>
+<ul>
+<li>
+<code>struct ingredient *next</code> -
+            points to the next ingredient in the linked list or <code>NULL</code>.
+          </li>
+</ul>
+</ul>
+<ul class="bulleted-list">
+<li style="list-style-type:circle">
+<strong>Hint:</strong> You should not use this struct until Stage 2.
+        </li>
+</ul>
+</li>
+</ul>
+<p>
+  Remember that these are skeletons, so add to the contents of each struct to
+  suit your implementation of the assignment.
+</p>
+<h2 id="allowed-c-features">Allowed C Features</h2>
+<p>
+  In this assignment, <b><u>you cannot use arrays</u></b>, other than
+  <code>char</code> arrays,  and cannot use the features explicitly banned in
+  the <a href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/resources/style_guide.html">Style Guide</a>.
+</p>
+<p>
+  We <strong>strongly</strong> encourage you to complete the assessment using
+  only features taught in lectures up to and including Week 8 and 9. The only C
+  features you will need to get full marks in the assignment are:
+</p>
+<ul>
+<li><code>int</code>, <code>char</code> and <code>double</code> variables.</li>
+<li>Structs.</li>
+<li>If statements.</li>
+<li>While loops.</li>
+<li>Your own functions.</li>
+<li>Pointers.</li>
+<li>
+<code>char</code> arrays/strings (you are not allowed to use arrays which
+    are not <code>char</code> arrays).
+  </li>
+<li>Linked lists.</li>
+<li>
+    Standard libraries: <code>stdio.h</code>, <code>stdlib.h</code> and
+    <code>string.h</code>.
+  </li>
+<li>
+    Style: Header comments, function comments, constants (<code>#define</code>'s),
+    and whitespace and indentation.
+  </li>
+</ul>
+<p>
+  Using any other features will not increase your marks (and will make it more
+  likely you make style mistakes that cost you marks).
+</p>
+<p>
+  If you choose to disregard this advice, you <strong>must</strong> still follow
+  the <a href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/resources/style_guide.html">Style Guide</a>.
+  You also may be unable to get help from course staff if you use features not
+  taught in DPST1091.
+</p>
+<p>
+  Features that the Style Guide strongly discourages or bans will be penalised
+  during marking.
+</p>
+<h2 id="reference-implementation">Reference Implementation</h2>
+<p>
+  To help you understand the proper behaviour of CS Pizzeria, we have provided
+  a reference implementation. If you have any questions about the behaviour of
+  CS Pizzeria, you can check them against this reference implementation.
+</p>
+<p>
+  To access the reference implementation, use the following command.
+
+</p><pre is="tty"><kbd is="sh">1091 cs_pizzeria</kbd></pre>
+<p></p>
+<h2 id="starter-code">Starter Code</h2>
+<div class="alert alert-info">
+<p>
+    Stubs are functions which compile, but are incomplete. In your starter code
+    <code>pizzeria.c</code>, most functions only have one line in them, which is
+    their return. This return is just so the code will compile, and you will need
+    to update these as you work on your code.
+  </p>
+</div>
+<p>
+  This <a href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/activities/cs_pizzeria/cs_pizzeria.zip">zip file</a> contains the
+  files that you need to get started with the assignment. It contains the following files:
+</p>
+<dl class="row">
+<dt class="col-3 text-right"><code class="cant_change">
+<a href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/activities/cs_pizzeria/pizzeria.h">pizzeria.h</a></code>
+</dt>
+<dd class="col-9">
+<ul>
+<li><span class="cant_change"><b>Do not change this file.</b></span></li>
+<li>
+      Contains declarations for all the functions that you need to implement for
+      this assignment.
+    </li>
+<li>
+      Contains extensive documentation for each function that you need to implement,
+      including examples of invalid input, any assumptions and the purpose of each
+      function.
+    </li>
+<li>
+      We may need to update this file from time to time (in the case of typos, or missing
+      statements). The most up-to-date version number of the file will be mentioned at
+      the very top of this page.
+    </li>
+</ul>
+</dd>
+<dt class="col-3 text-right"><code class="must_change">
+<a href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/activities/cs_pizzeria/pizzeria.c">pizzeria.c</a></code>
+</dt>
+<dd class="col-9">
+<ul>
+<li>
+<span class="must_change"><b>This is the only file you will be submitting.
+      All of your code will be in this file.</b></span>
+</li>
+<li>
+      Contains stubs for each function in <code>pizzeria.h</code>.
+    </li>
+<li> The function <code>create_pizzeria</code> has been completed for the
+      current definition of <code>struct pizzeria</code>.
+      <ul>
+<li>
+          When you change the contents of <code>struct pizzeria</code>, you will
+          need to update the function to match.
+        </li>
+</ul>
+</li>
+<li>
+      Contains the helper functions <code>print_order</code> and
+      <code>print_ingredient</code>, which you should use to print the orders and
+      ingredients. These functions will print the orders and ingredients in the
+      expected format.
+    </li>
+</ul>
+</dd>
+<dt class="col-3 text-right"><code class="cant_change">
+<a href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/activities/cs_pizzeria/main.c">main.c</a></code>
+</dt>
+<dd class="col-9">
+<ul>
+<li><span class="cant_change"><b>Do not change this file.</b></span></li>
+<li>
+      Contains a main and other functions, which allow you to interact and
+      test the functions you implement in <code>pizzeria.c</code>.
+    </li>
+</ul>
+</dd>
+</dl>
+<h2 id="how-to-get-started">How To Get Started</h2>
+<ol>
+<li>
+    Create a new folder for your assignment work and move into it.
+
+<pre is="tty"><kbd is="sh">mkdir ass2</kbd>
+<kbd is="sh">cd ass2</kbd>
+</pre>
+</li>
+<li>
+<p>
+      Download the starter code above or use the commands below
+      to copy the file into your current directory on your CSE account.
+    </p>
+<pre is="tty"><kbd is="sh">cp -n /web/dp1091/22T1/activities/cs_pizzeria/pizzeria.c .</kbd>
+<kbd is="sh">ln -s /web/dp1091/22T1/activities/cs_pizzeria/main.c .</kbd>
+<kbd is="sh">ln -s /web/dp1091/22T1/activities/cs_pizzeria/pizzeria.h .</kbd>
+</pre>
+<p>
+      The <b>ln</b> commands create symbolic links to a file in class account,
+      so you are always using the latest version.
+    </p>
+</li>
+<li>
+<p>
+      Run <code>1091 autotest</code> for the first stage&nbsp;to make sure you have
+      correctly downloaded the files.
+    </p>
+<pre is="tty"><kbd is="sh">1091 autotest-stage 01 cs_pizzeria</kbd>
+</pre>
+<p>
+    If the tests do not run, you have not downloaded the correct files. If it
+    says you have passed 1 test and failed 13 tests, you have downloaded the correct files.
+  </p>
+</li>
+<li>
+    Spend a few minutes playing with the reference solution -- get a feel for
+    how the assignment works.
+
+<pre is="tty"><kbd is="sh">1091 cs_pizzeria</kbd>
+</pre>
+</li>
+<li>
+    Read through Stage 1 on the webpage, then read through Stage 1 in
+    <code>pizzeria.h</code>.
+  </li>
+<li>
+    Think about your solution and <u>draw diagrams</u> to supplement your
+    understanding of the required functions.
+  </li>
+<li>
+    Start coding in <code>pizzeria.c</code>, using <code>pizzeria.h</code> to
+    check the details of any specific assumptions or edge cases. As you code,
+    it is recommended to have <code>pizzeria.h</code> open and easily accessible.
+    Also, if there is anything you're unsure of, run the reference implementation!
+  </li>
+<li>Repeat steps 5-8 with each following stage you want to complete.</li>
+</ol>
+<h2 id="how-to-compile">How To Compile</h2>
+<p>
+  To compile a multi-file project, you will want to compile the <code>.c</code>
+  files together. For this assignment, you will want to use the following
+  command.
+</p>
+<pre is="tty"><kbd is="sh">dcc -o cs_pizzeria pizzeria.c main.c</kbd>
+</pre>
+<h1 id="your-tasks">Your Tasks</h1>
+<p>
+  This assignment consists of four stages. Each stage builds on the work of the
+  previous stage, and each stage has a higher complexity than its predecessor.
+  You should complete the stages in order.
+</p>
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item active">
+<a class="nav-link active" data-toggle="tab" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass2/index.html#stage-1-tab" role="tab">
+      Stage 1 <small>●◌◌</small>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-toggle="tab" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass2/index.html#stage-2-tab" role="tab">
+      Stage 2 <small>●◌◌</small>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-toggle="tab" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass2/index.html#stage-3-tab" role="tab">
+      Stage 3 <small>●●◌</small>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-toggle="tab" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass2/index.html#stage-4-tab" role="tab">
+      Stage 4 <small>●●●</small>
+</a>
+</li>
+</ul>
+<div class="tab-content">
+<div class="toc-switchable tab-pane fade in active show" id="stage-1-tab" role="tab-panel">
+    <h2 id="stage-1">Stage 1</h2>
+
+<div class="alert alert-info">
+  <p>
+    You can run the autotests for <b>Stage 1</b> by running the following command:
+    </p><pre class="commandline"><b>1091 autotest-stage 01 cs_pizzeria</b></pre>
+  <p></p>
+</div>
+
+
+<aside class="rationale">
+  <p><b>Why does this stage exist?</b></p>
+  <p>
+    This stage tests you on creating, inserting and iterating through a linked
+    list. This is one of the key learning outcomes of DPST1091, and it will be
+    tested in your Lab Exercises, and during the final exam. We
+    teach this skill because it is one of the fundamental ways that data can be
+    stored and manipulated, and forms a basis for most algorithms.
+  </p>
+
+  <p><b>Who do we expect to complete this stage?</b></p>
+  <p>
+    While some students may struggle with it, we hope every student will
+    complete this stage.
+  </p>
+
+  <p><b>What help will tutors provide to students?</b></p>
+  <p>
+    Tutors can give you a detailed theoretical explanation, and give lots of
+    help with the lab exercises that lead to this assignment. Tutors will be
+    happy to help you debug any issues with your code.
+  </p>
+
+  <p><b>How many marks will I get?</b></p>
+  <p>Completing this stage, with good style, is worth around a 30% mark.</p>
+</aside>
+
+<p>In this stage, you will implement:</p>
+<ol>
+  <li><code>add_order()</code></li>
+  <li><code>print_all_orders()</code></li>
+  <li><code>next_deadline()</code></li>
+</ol>
+
+<div id="stage-1.1">
+  <h3>1.1 Add Order</h3>
+
+  <p>
+    Your first task is to implement the function: <code>add_order()</code>. The
+    details of the function can be found in <code>pizzeria.h</code>.
+  </p>
+
+  <p>
+    An order is a customer's request to the pizzeria and needs to be
+    stored. This will include:
+  </p>
+  <ul>
+    <li>The customer's name,</li>
+    <li>The pizza's name,</li>
+    <li>The price they will pay for the pizza and</li>
+    <li>The time allowed to cook the pizza in.</li>
+  </ul>
+
+  <p>
+    A new order should be added to the end of the pizzeria's linked list
+    of orders, emulating the first come, first serve way of thinking.
+  </p>
+
+  <p>
+    You should fill in the members of <code>struct order</code> to ones that
+    make the most sense to you.
+  </p>
+
+  <aside class="hint">
+    <p>
+      Some fields you may want to add to <code>struct order</code> include a
+      character array for the customer name and a double for the price. The
+      character array should be of length <code>MAX_STR_LENGTH</code> as found in
+      <code>pizzeria.h</code>.
+    </p>
+    <p>
+      For example, if you wanted to add a customer name string to your struct, you
+      could define it like this:
+    </p>
+    <code>char customer[MAX_STR_LENGTH];</code>
+  </aside>
+
+  <p>
+    <strong>For this assignment, the exact specifics of how the function should
+      operate will be in <code>pizzeria.h</code>. Since this is the first function
+      required to be implemented, the description in <code>pizzeria.h</code> is
+      displayed in the following toggle list. However, for future functions, we
+      expect you to refer to <code>pizzeria.h</code>.</strong>
+  </p>
+
+  
+<div class="accordion" id="accordiona">
+  <div class="card">
+    <div class="card-header" id="headinga">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsea" aria-expanded="true" aria-controls="collapsea">
+        1.1.1 Description of add_order in the .h file
+      </button>
+    </div>
+
+    <div id="collapsea" class="collapse" aria-labelledby="headinga" data-parent="#accordiona">
+      <div class="card-body">
+        
+    
+<div class="highlight"><pre><span></span><span class="c1">////////////////////////////////////////////////////////////////////////</span>
+<span class="c1">// INSERT ORDER INTO PIZZERIA - Command 'o'</span>
+<span class="c1">//</span>
+<span class="c1">// Add a new Order to the Pizzeria and return an int indicating the</span>
+<span class="c1">// resulting status of the new Order.</span>
+<span class="c1">//</span>
+<span class="c1">// The new Order should be added to the end of the Pizzeria's list of</span>
+<span class="c1">// Orders. This means that you should add the Order directly after the</span>
+<span class="c1">// most recent Order added.</span>
+<span class="c1">//</span>
+<span class="c1">// `add_order` will be given the parameters:</span>
+<span class="c1">// - `pizzeria` -- a pointer to a struct pizzeria created by</span>
+<span class="c1">//   `create_pizzeria`.</span>
+<span class="c1">// - `customer` -- a string, which contains the name of the customer</span>
+<span class="c1">//   for the order.</span>
+<span class="c1">// - `pizza_name` -- a string, which contains the name of the pizza for</span>
+<span class="c1">//   the order.</span>
+<span class="c1">// - `price` -- a double, which indicates the cost of the order the</span>
+<span class="c1">//   customer must pay. An invalid `price` may be passed in and an</span>
+<span class="c1">//   invalid `price` is a double less than 0.</span>
+<span class="c1">// - `time_allowed` -- an int, which indicates the time when the</span>
+<span class="c1">//   customer expects the order. If `time_allowed` is 15, this means</span>
+<span class="c1">//   the customer expects the order in 15 minutes. An invalid</span>
+<span class="c1">//   `time_allowed` may be passed in and an invalid `time_allowed`</span>
+<span class="c1">//   is an int less than or equal to 0.</span>
+<span class="c1">//</span>
+<span class="c1">// `add_order` will return (in order of precedence):</span>
+<span class="c1">// - `INVALID_PRICE` -- if the price is invalid (negative).</span>
+<span class="c1">// - `INVALID_TIME` -- if the time_allowed is invalid (non-positive).</span>
+<span class="c1">// - `SUCCESS` -- if the Order has been successfully added to the Pizzeria.</span>
+<span class="c1">//</span>
+<span class="c1">// ASSUMPTIONS</span>
+<span class="c1">// - `pizzeria` will always be a valid pointer and never be NULL.</span>
+<span class="c1">// - `customer` will always be a valid string.</span>
+<span class="c1">// - `pizza_name` will always be a valid string.</span>
+<span class="c1">//</span>
+</pre></div>
+
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <p>
+    The following toggle lists contain diagrams which will help supplement your
+    understanding of how the function affects the pizzeria.
+  </p>
+
+  
+<div class="accordion" id="accordionb">
+  <div class="card">
+    <div class="card-header" id="headingb">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseb" aria-expanded="true" aria-controls="collapseb">
+        1.1.2 Diagram of inserting first order into an empty list
+      </button>
+    </div>
+
+    <div id="collapseb" class="collapse" aria-labelledby="headingb" data-parent="#accordionb">
+      <div class="card-body">
+        
+    <p><strong>Before adding an order</strong></p>
+    <figure class="image">
+      <img src="./DPST1091 22T1 - Assignment 2 - CS Pizzeria_files/pizzeria-empty-orders.svg">
+    </figure>
+
+    <p>
+      <strong>After adding an order with command <code>o Joe Meat-Lovers 10.99
+      20</code></strong>
+    </p>
+    <figure class="image">
+      <img src="./DPST1091 22T1 - Assignment 2 - CS Pizzeria_files/pizzeria-add-to-empty-orders.svg">
+    </figure>
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+<div class="accordion" id="accordionc">
+  <div class="card">
+    <div class="card-header" id="headingc">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsec" aria-expanded="true" aria-controls="collapsec">
+        1.1.3 Diagram of inserting orders into a non-empty list
+      </button>
+    </div>
+
+    <div id="collapsec" class="collapse" aria-labelledby="headingc" data-parent="#accordionc">
+      <div class="card-body">
+        
+    <p>
+      Potential fields in <code>struct order</code> will be shown from now on
+      but their type has been omitted as this is up to you to decide (if you
+      take this path)!
+    </p>
+
+    <p><strong>Before accepting a new order</strong></p>
+    <figure class="image">
+      <img src="./DPST1091 22T1 - Assignment 2 - CS Pizzeria_files/pizzeria-add-to-populated-list-before.svg">
+    </figure>
+
+    <p>
+      <strong>After accepting a new order when there are other orders already
+      waiting. This uses the command <code>o Betty Peri-Peri 14.00
+      15</code>.</strong>
+    </p>
+    <figure class="image">
+      <img src="./DPST1091 22T1 - Assignment 2 - CS Pizzeria_files/pizzeria-add-to-populated-list-after.svg">
+    </figure>
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div id="stage-1.2">
+  <h3>1.2 Print All Orders</h3>
+
+  <p>
+    Your second task is to implement the function: <code>print_all_orders()</code>.
+    The details of the function can be found in <code>pizzeria.h</code>.
+  </p>
+
+  <p>
+    The owner of the pizzeria would like to have an overview of all the current
+    orders in their restaurant. In this function, you will be printing all the
+    orders in the desired format.
+  </p>
+
+  <p>
+    For this function, you should use the provided helper function
+    <code>print_order()</code> to print the orders in the expected format.
+  </p>
+
+  <p>
+    In <code>print_all_orders()</code>, there is a function call to a function
+    named <code>print_selected_order()</code>. This function call should be at
+    the very end of the function and should not be removed.
+    <code>print_selected_order()</code> is a function to be implemented in Stage 2.
+  </p>
+
+  
+<div class="accordion" id="accordionaa">
+  <div class="card">
+    <div class="card-header" id="headingaa">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseaa" aria-expanded="true" aria-controls="collapseaa">
+        1.2.1 Example printing two orders
+      </button>
+    </div>
+
+    <div id="collapseaa" class="collapse" aria-labelledby="headingaa" data-parent="#accordionaa">
+      <div class="card-body">
+        
+
+<pre is="tty"><kbd is="sh">dcc -o cs_pizzeria main.c pizzeria.c</kbd>
+<kbd is="sh">./cs_pizzeria</kbd>
+===========================[ CS Pizzeria ]==========================
+Welcome to CS Pizzeria! Type 'h' to see help.
+====================================================================
+000: <kbd>o Tony Pepperoni 15 20</kbd>
+Added order successfully!
+001: <kbd>p</kbd>
+01: Tony ordered a Pepperoni pizza ($15.00) due in 20 minutes.
+
+No selected order.
+002: <kbd>o Rebecca Ham-n-Cheese 10.99 30</kbd>
+Added order successfully!
+003: <kbd>p</kbd>
+01: Tony ordered a Pepperoni pizza ($15.00) due in 20 minutes.
+02: Rebecca ordered a Ham-n-Cheese pizza ($10.99) due in 30 minutes.
+
+No selected order.
+004: <kbd>q</kbd>
+</pre>
+
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+<div class="accordion" id="accordionab">
+  <div class="card">
+    <div class="card-header" id="headingab">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseab" aria-expanded="true" aria-controls="collapseab">
+        1.2.2 Example printing six orders
+      </button>
+    </div>
+
+    <div id="collapseab" class="collapse" aria-labelledby="headingab" data-parent="#accordionab">
+      <div class="card-body">
+        
+
+<pre is="tty"><kbd is="sh">dcc -o cs_pizzeria main.c pizzeria.c</kbd>
+<kbd is="sh">./cs_pizzeria</kbd>
+===========================[ CS Pizzeria ]==========================
+Welcome to CS Pizzeria! Type 'h' to see help.
+====================================================================
+000: <kbd>o Harry Margarita 15 20</kbd>
+Added order successfully!
+001: <kbd>o Dumbledore Beef-n-Onion 10 30</kbd>
+Added order successfully!
+002: <kbd>o Molly Pepperoni 12.5 30</kbd>
+Added order successfully!
+003: <kbd>o Remus Nutella 18.99 50</kbd>
+Added order successfully!
+004: <kbd>o Percy Anchovies 19.99 10</kbd>
+Added order successfully!
+005: <kbd>o Hermione Grilled-Vegetable 14.49 60</kbd>
+Added order successfully!
+006: <kbd>p</kbd>
+01: Harry ordered a Margarita pizza ($15.00) due in 20 minutes.
+02: Dumbledore ordered a Beef-n-Onion pizza ($10.00) due in 30 minutes.
+03: Molly ordered a Pepperoni pizza ($12.50) due in 30 minutes.
+04: Remus ordered a Nutella pizza ($18.99) due in 50 minutes.
+05: Percy ordered a Anchovies pizza ($19.99) due in 10 minutes.
+06: Hermione ordered a Grilled-Vegetable pizza ($14.49) due in 60 minutes.
+
+No selected order.
+007: <kbd>q</kbd>
+</pre>
+
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+<div id="stage-1.3">
+  <h3>1.3 Next Deadline</h3>
+
+  <p>
+    Your third task is to implement the function: <code>next_deadline()</code>.
+    The details of the function can be found in <code>pizzeria.h</code>.
+  </p>
+
+  <p>
+    The chefs in the pizzeria would like to know how much time is left until their
+    next deadline. You will need to tell the chefs what is the shortest time allowed
+    among all orders in the pizzeria.
+  </p>
+
+  <p>
+    The following toggle list contains a diagram which will help supplement
+    your understanding of how the function interprets the pizzeria.
+  </p>
+
+  
+<div class="accordion" id="accordiond">
+  <div class="card">
+    <div class="card-header" id="headingd">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsed" aria-expanded="true" aria-controls="collapsed">
+        1.3.1 Diagram to show the pizzeria
+      </button>
+    </div>
+
+    <div id="collapsed" class="collapse" aria-labelledby="headingd" data-parent="#accordiond">
+      <div class="card-body">
+        
+    <figure class="image">
+      <img src="./DPST1091 22T1 - Assignment 2 - CS Pizzeria_files/pizzeria-priority-notation.svg">
+    </figure>
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+<div class="accordion" id="accordionac">
+  <div class="card">
+    <div class="card-header" id="headingac">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseac" aria-expanded="true" aria-controls="collapseac">
+        1.3.2 Example output of next_deadline()
+      </button>
+    </div>
+
+    <div id="collapseac" class="collapse" aria-labelledby="headingac" data-parent="#accordionac">
+      <div class="card-body">
+        
+
+<pre is="tty"><kbd is="sh">dcc -o cs_pizzeria main.c pizzeria.c</kbd>
+<kbd is="sh">./cs_pizzeria</kbd>
+===========================[ CS Pizzeria ]==========================
+Welcome to CS Pizzeria! Type 'h' to see help.
+====================================================================
+000: <kbd>o Harry Margarita 15 20</kbd>
+Added order successfully!
+001: <kbd>o Hermione Grilled-Vegetable 14.49 60</kbd>
+Added order successfully!
+002: <kbd>o Molly Pepperoni 12.5 30</kbd>
+Added order successfully!
+003: <kbd>o Percy Anchovies 19.99 50</kbd>
+Added order successfully!
+004: <kbd>o Dumbledore Beef-n-Onion 10 30</kbd>
+Added order successfully!
+005: <kbd>o Remus Nutella 18.99 50</kbd>
+Added order successfully!
+006: <kbd>!</kbd>
+The next deadline is in 20 minutes
+007: <kbd>q</kbd>
+</pre>
+
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+  </div>
+<div class="toc-switchable tab-pane fade" id="stage-2-tab" role="tab-panel">
+    <h2 id="stage-2">Stage 2</h2>
+
+<div class="alert alert-info">
+  <p>
+    You can run the autotests for <b>Stage 2</b> by running the following command:
+    </p><pre class="commandline"><b>1091 autotest-stage 02 cs_pizzeria</b></pre>
+  <p></p>
+</div>
+
+
+<aside class="rationale">
+  <p><b>Why does this stage exist?</b></p>
+  <p>
+    This stage tests your ability to manipulate the fields of structs within a
+    linked list, and to create, insert and iterate through a two-dimensional 
+    linked list.
+  </p>
+
+  <p><b>Who do we expect to complete this stage?</b></p>
+  <p>
+    Though it could be difficult for some, we hope that all students will be 
+    complete almost if not all of this stage.
+  </p>
+
+  <p><b>What help will tutors provide to students?</b></p>
+  <p>
+    Tutors can give you a detailed theoretical explanation, and give lots of 
+    help with the lab exercises that lead to this assignment. Tutors will be 
+    happy to help you debug any issues with your code.
+  </p>
+
+  <p><b>How many marks will I get?</b></p>
+  <p>Completing this stage, with good style, is worth around a 65% mark.</p>
+</aside>
+
+<p>In this stage, you will implement:</p>
+<ol>
+  <li><code>select_next_order()</code></li>
+  <li><code>print_selected_order()</code></li>
+  <li><code>select_previous_order()</code></li>
+  <li><code>add_ingredient()</code></li>
+  <li><code>calculate_total_profit()</code></li>
+</ol>
+
+<div id="stage-2.1">
+  <h3>2.1 Select Next Order</h3>
+
+  <p>
+    Your first task is to implement the function: <code>select_next_order()</code>. 
+    The details of the function can be found in <code>pizzeria.h</code>.
+  </p>
+
+  <p>
+    By selecting an order, the pizzeria is then able to do something with that 
+    particular order. In the other functions in this stage and future stages, 
+    you will need to select the order which you want to make changes to.
+  </p>
+
+  <p>
+    An analogy to understand selection is to think about editing a word document. 
+    When you select some text, you can bolden it or italicise it. Similarly, in 
+    CS Pizzeria, when you select an order, you can add an ingredient to it or 
+    calculate its total profit.
+  </p>
+
+  <p>
+    The following toggle lists contains diagrams which will help supplement your 
+    understanding of how the function affects the pizzeria.
+  </p>
+
+  
+<div class="accordion" id="accordione">
+  <div class="card">
+    <div class="card-header" id="headinge">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsee" aria-expanded="true" aria-controls="collapsee">
+        2.1.1 Diagram for no currently selected order
+      </button>
+    </div>
+
+    <div id="collapsee" class="collapse" aria-labelledby="headinge" data-parent="#accordione">
+      <div class="card-body">
+        
+    <figure class="image">
+      <img src="./DPST1091 22T1 - Assignment 2 - CS Pizzeria_files/pizzeria-no-selected-order.svg">
+    </figure>
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+<div class="accordion" id="accordionf">
+  <div class="card">
+    <div class="card-header" id="headingf">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsef" aria-expanded="true" aria-controls="collapsef">
+        2.1.2 Diagram for cycling through the orders with select_next()
+      </button>
+    </div>
+
+    <div id="collapsef" class="collapse" aria-labelledby="headingf" data-parent="#accordionf">
+      <div class="card-body">
+        
+    <figure class="image">
+      <img src="./DPST1091 22T1 - Assignment 2 - CS Pizzeria_files/pizzeria-select-next-frame-0.svg">
+    </figure>
+    <figure class="image">
+      <img src="./DPST1091 22T1 - Assignment 2 - CS Pizzeria_files/pizzeria-select-next-frame-1.svg">
+    </figure>
+    <figure class="image">
+      <img src="./DPST1091 22T1 - Assignment 2 - CS Pizzeria_files/pizzeria-select-next-frame-2.svg">
+    </figure>
+    <figure class="image">
+      <img src="./DPST1091 22T1 - Assignment 2 - CS Pizzeria_files/pizzeria-select-next-frame-3.svg">
+    </figure>
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div id="stage-2.2">
+  <h3>2.2 Print Selected Order</h3>
+
+  <p>
+    Your second task is to implement the function: <code>print_selected_order()</code>. 
+    The details of the function can be found in <code>pizzeria.h</code>.
+  </p>
+
+  <p>
+    <code>print_selected_order()</code> prints the number of the selected order 
+    and the ingredients within the selected order.
+  </p>
+
+  <p>
+    In Stage 1, when implementing <code>print_all_orders()</code>, there was a 
+    function call at the end to <code>print_selected_order()</code>. In the 
+    starter code, <code>print_selected_order()</code> simply prints "There is 
+    no selected order." This is correct if selection hasn't been 
+    implemented yet, which was true in Stage 1. However, since you have now 
+    implemented the selection functions in 2.1 and 2.3, allowing you to select 
+    an order, you will now extend this to print out the selected order in this
+    function.
+  </p>
+
+  <p>
+    For this function, you should use the provided helper function 
+    <code>print_ingredient()</code> to print the ingredients in the expected 
+    format.
+  </p>
+
+  <aside class="hint">
+    <p>
+      To print a double to two decimal places, we use 
+      <code>printf("%.2lf", price);</code>.
+    </p>
+  </aside>
+
+  <aside class="hint">
+    <p>
+      You don't have to print the ingredients if you do not intend on
+      completing the rest of Stage 2. You will still pass autotests to do with
+      selection if you ignore printing ingredients.
+    </p>
+  </aside>
+
+  
+<div class="accordion" id="accordionad">
+  <div class="card">
+    <div class="card-header" id="headingad">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsead" aria-expanded="true" aria-controls="collapsead">
+        2.2.1 Example output of print_selected_order()
+      </button>
+    </div>
+
+    <div id="collapsead" class="collapse" aria-labelledby="headingad" data-parent="#accordionad">
+      <div class="card-body">
+        
+
+<pre is="tty"><kbd is="sh">dcc -o cs_pizzeria main.c pizzeria.c</kbd>
+<kbd is="sh">./cs_pizzeria</kbd>
+===========================[ CS Pizzeria ]==========================
+Welcome to CS Pizzeria! Type 'h' to see help.
+====================================================================
+000: <kbd>o Shrey Pineapple 20.99 25</kbd>
+Added order successfully!
+001: <kbd>p</kbd>
+01: Shrey ordered a Pineapple pizza ($20.99) due in 25 minutes.
+
+No selected order.
+002: <kbd>&gt;</kbd>
+003: <kbd>p</kbd>
+01: Shrey ordered a Pineapple pizza ($20.99) due in 25 minutes.
+
+The selected order is Shrey's Pineapple pizza ($20.99) due in 25 minutes.
+004: <kbd>q</kbd>
+</pre>
+
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div id="stage-2.3">
+  <h3>2.3 Select Previous Order</h3>
+
+  <p>
+    Your third task is to implement the function: <code>select_previous_order()</code>. 
+    The details of the function can be found in <code>pizzeria.h</code>.
+  </p>
+
+  <p>
+    For example, if the selected order is the third order in the list, after 
+    this function call, the selected order should become the second order in 
+    the list.
+  </p>
+
+  
+<div class="accordion" id="accordionae">
+  <div class="card">
+    <div class="card-header" id="headingae">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseae" aria-expanded="true" aria-controls="collapseae">
+        2.3.1 Example output of using select_previous_order()
+      </button>
+    </div>
+
+    <div id="collapseae" class="collapse" aria-labelledby="headingae" data-parent="#accordionae">
+      <div class="card-body">
+        
+
+<pre is="tty"><kbd is="sh">dcc -o cs_pizzeria main.c pizzeria.c</kbd>
+<kbd is="sh">./cs_pizzeria</kbd>
+===========================[ CS Pizzeria ]==========================
+Welcome to CS Pizzeria! Type 'h' to see help.
+====================================================================
+000: <kbd>o Shrey Pineapple 20.40 10</kbd>
+Added order successfully!
+001: <kbd>o Sasha Not-Pineapple 15.00 15</kbd>
+Added order successfully!
+002: <kbd>p</kbd>
+01: Shrey ordered a Pineapple pizza ($20.40) due in 10 minutes.
+02: Sasha ordered a Not-Pineapple pizza ($15.00) due in 15 minutes.
+
+No selected order.
+003: <kbd>&gt;</kbd>
+004: <kbd>p</kbd>
+01: Shrey ordered a Pineapple pizza ($20.40) due in 10 minutes.
+02: Sasha ordered a Not-Pineapple pizza ($15.00) due in 15 minutes.
+
+The selected order is Shrey's Pineapple pizza ($20.40) due in 10 minutes.
+005: <kbd>&gt;</kbd>
+006: <kbd>p</kbd>
+01: Shrey ordered a Pineapple pizza ($20.40) due in 10 minutes.
+02: Sasha ordered a Not-Pineapple pizza ($15.00) due in 15 minutes.
+
+The selected order is Sasha's Not-Pineapple pizza ($15.00) due in 15 minutes.
+007: <kbd>&gt;</kbd>
+008: <kbd>p</kbd>
+01: Shrey ordered a Pineapple pizza ($20.40) due in 10 minutes.
+02: Sasha ordered a Not-Pineapple pizza ($15.00) due in 15 minutes.
+
+No selected order.
+009: <kbd>&lt;</kbd>
+010: p
+01: Shrey ordered a Pineapple pizza ($20.40) due in 10 minutes.
+02: Sasha ordered a Not-Pineapple pizza ($15.00) due in 15 minutes.
+
+The selected order is Sasha's Not-Pineapple pizza ($15.00) due in 15 minutes.
+011: <kbd>&lt;</kbd>
+012: p
+01: Shrey ordered a Pineapple pizza ($20.40) due in 10 minutes.
+02: Sasha ordered a Not-Pineapple pizza ($15.00) due in 15 minutes.
+
+The selected order is Shrey's Pineapple pizza ($20.40) due in 10 minutes.
+013: <kbd>&lt;</kbd>
+014: p
+01: Shrey ordered a Pineapple pizza ($20.40) due in 10 minutes.
+02: Sasha ordered a Not-Pineapple pizza ($15.00) due in 15 minutes.
+
+No selected order.
+015: <kbd>q</kbd>
+</pre>
+
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+<div id="stage-2.4">
+  <h3>2.4 Add Ingredient</h3>
+
+  <p>
+    Your fourth task is to implement the function: <code>add_ingredient()</code>. 
+    The details of the function can be found in <code>pizzeria.h</code>.
+  </p>
+
+  <p>
+    When called, <code>add_ingredient()</code> will add an ingredient to the 
+    selected order.
+  </p>
+
+  
+<div class="accordion" id="accordiong">
+  <div class="card">
+    <div class="card-header" id="headingg">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseg" aria-expanded="true" aria-controls="collapseg">
+        2.4.1 Diagram for inserting ingredients into an empty list
+      </button>
+    </div>
+
+    <div id="collapseg" class="collapse" aria-labelledby="headingg" data-parent="#accordiong">
+      <div class="card-body">
+        
+    <p><strong>Before</strong></p>
+    <figure class="image">
+      <img src="./DPST1091 22T1 - Assignment 2 - CS Pizzeria_files/pizzeria-insert-ingredient-empty-order-before.svg">
+    </figure>
+
+    <p>
+      <strong>After adding a new ingredient to the selected order, using command 
+      <code>i Base 1 3.00</code></strong>
+    </p>
+    <figure class="image">
+      <img src="./DPST1091 22T1 - Assignment 2 - CS Pizzeria_files/pizzeria-insert-ingredient-empty-order-after.svg">
+    </figure>
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+<div class="accordion" id="accordionh">
+  <div class="card">
+    <div class="card-header" id="headingh">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseh" aria-expanded="true" aria-controls="collapseh">
+        2.4.2 Diagram for inserting ingredients into a non-empty list
+      </button>
+    </div>
+
+    <div id="collapseh" class="collapse" aria-labelledby="headingh" data-parent="#accordionh">
+      <div class="card-body">
+        
+    <p><strong>Before</strong></p>
+    <figure class="image">
+      <img src="./DPST1091 22T1 - Assignment 2 - CS Pizzeria_files/pizzeria-ingredients-insert-before.svg">
+    </figure>
+
+    <p><strong>After entering the command <code>i Green-Pepper 3 1.5</code></strong></p>
+    <figure class="image">
+      <img src="./DPST1091 22T1 - Assignment 2 - CS Pizzeria_files/pizzeria-ingredients-insert-after.svg">
+    </figure>
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+<div class="accordion" id="accordioni">
+  <div class="card">
+    <div class="card-header" id="headingi">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsei" aria-expanded="true" aria-controls="collapsei">
+        2.4.3 Diagram for inserting existing ingredient
+      </button>
+    </div>
+
+    <div id="collapsei" class="collapse" aria-labelledby="headingi" data-parent="#accordioni">
+      <div class="card-body">
+         
+    <p><strong>Before</strong></p>
+    <figure class="image">
+      <img src="./DPST1091 22T1 - Assignment 2 - CS Pizzeria_files/pizzeria-merge-ingredient-before.svg">
+    </figure>
+
+    <p><strong>After adding 4 more units of Mozarella to Joe's order</strong></p>
+    <figure class="image">
+      <img src="./DPST1091 22T1 - Assignment 2 - CS Pizzeria_files/pizzeria-merge-ingredient-after.svg">
+    </figure>
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <aside class="hint">
+    <p>
+      To order ingredients, use the function <code>strcmp()</code> found in 
+      <code>string.h</code>. You may find the lab exercise from Week 8:
+      <b>Find an element in a Linked List (list_contains.c)</b> useful.
+    </p>
+
+    <p>
+      Also, if you are finding it difficult to find a while condition,
+      consider using a sentinel variable.
+    </p>
+  </aside>
+
+  <aside class="hint">
+    <p>
+      If you want to attempt Stage 3, a useful function to implement now would
+      be:
+    </p>
+
+    
+<div class="highlight"><pre><span></span><span class="c1">// Insert ingredient `new` into linked list of ingredients and returns the new head as</span>
+<span class="c1">// a result</span>
+<span class="k">struct</span> <span class="nc">ingredient</span> <span class="o">*</span><span class="n">add_ingredient_ordered</span><span class="p">(</span><span class="k">struct</span> <span class="nc">ingredient</span> <span class="o">*</span><span class="n">new</span><span class="p">,</span> <span class="k">struct</span> <span class="nc">ingredient</span> <span class="o">*</span><span class="n">head</span><span class="p">);</span>
+</pre></div>
+
+
+  </aside>
+
+  
+<div class="accordion" id="accordionaf">
+  <div class="card">
+    <div class="card-header" id="headingaf">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseaf" aria-expanded="true" aria-controls="collapseaf">
+        2.4.4 Example output with one ingredient
+      </button>
+    </div>
+
+    <div id="collapseaf" class="collapse" aria-labelledby="headingaf" data-parent="#accordionaf">
+      <div class="card-body">
+        
+
+<pre is="tty"><kbd is="sh">dcc -o cs_pizzeria main.c pizzeria.c</kbd>
+<kbd is="sh">./cs_pizzeria</kbd>
+===========================[ CS Pizzeria ]==========================
+Welcome to CS Pizzeria! Type 'h' to see help.
+====================================================================
+000: <kbd>o Betty Margherita 10.99 10</kbd>
+Added order successfully!
+001: <kbd>&gt;</kbd>
+002: <kbd>p</kbd>
+01: Betty ordered a Margherita pizza ($10.99) due in 10 minutes.
+
+The selected order is Betty's Margherita pizza ($10.99) due in 10 minutes.
+003: <kbd>i Tomato-Paste 1 1.0</kbd>
+Ingredient added successfully!
+004: <kbd>p</kbd>
+01: Betty ordered a Margherita pizza ($10.99) due in 10 minutes.
+
+The selected order is Betty's Margherita pizza ($10.99) due in 10 minutes.
+    Tomato-Paste: 1 @ $1.00
+005: <kbd>q</kbd>
+</pre>
+
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  
+<div class="accordion" id="accordionag">
+  <div class="card">
+    <div class="card-header" id="headingag">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseag" aria-expanded="true" aria-controls="collapseag">
+        2.4.5 Example output with multiple ingredients
+      </button>
+    </div>
+
+    <div id="collapseag" class="collapse" aria-labelledby="headingag" data-parent="#accordionag">
+      <div class="card-body">
+        
+
+<pre is="tty"><kbd is="sh">dcc -o cs_pizzeria main.c pizzeria.c</kbd>
+<kbd is="sh">./cs_pizzeria</kbd>
+===========================[ CS Pizzeria ]==========================
+Welcome to CS Pizzeria! Type 'h' to see help.
+====================================================================
+000: <kbd>o Betty Margherita 10.99 10</kbd>
+Added order successfully!
+001: <kbd>&gt;</kbd>
+002: <kbd>p</kbd>
+01: Betty ordered a Margherita pizza ($10.99) due in 10 minutes.
+
+The selected order is Betty's Margherita pizza ($10.99) due in 10 minutes.
+003: <kbd>i Regular-Base 1 2.0</kbd>
+Ingredient added successfully!
+004: <kbd>i Tomato-Paste 1 1.0</kbd>
+Ingredient added successfully!
+005: <kbd>i Mozzarella-Cheese 7 0.3</kbd>
+Ingredient added successfully!
+006: <kbd>i Basil-Leaf 7 0.15</kbd>
+Ingredient added successfully!
+007: <kbd>p</kbd>
+01: Betty ordered a Margherita pizza ($10.99) due in 10 minutes.
+
+The selected order is Betty's Margherita pizza ($10.99) due in 10 minutes.
+    Basil-Leaf: 7 @ $0.15
+    Mozzarella-Cheese: 7 @ $0.30
+    Regular-Base: 1 @ $2.00
+    Tomato-Paste: 1 @ $1.00
+008: <kbd>i Tomato-Paste 4 1.0</kbd>
+Ingredient added successfully!
+009: <kbd>p</kbd>
+01: Betty ordered a Margherita pizza ($10.99) due in 10 minutes.
+
+The selected order is Betty's Margherita pizza ($10.99) due in 10 minutes.
+    Basil-Leaf: 7 @ $0.15
+    Mozzarella-Cheese: 7 @ $0.30
+    Regular-Base: 1 @ $2.00
+    Tomato-Paste: 5 @ $1.00
+010: <kbd>q</kbd>
+</pre>
+  
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div id="stage-2.5">
+  <h3>2.5 Calculate Total Profit</h3>
+
+  <p>
+    Your fifth task is to implement the function: <code>calculate_total_profit()</code>. 
+    The details of the function can be found in <code>pizzeria.h</code>.
+  </p>
+
+  <p>
+    When called, <code>calculate_total_profit()</code> will calculate the total 
+    profit of the selected order by calculating the expenses of the ingredients 
+    and subtracting it from the price the customer is paying.
+  </p>
+
+  
+<div class="accordion" id="accordionah">
+  <div class="card">
+    <div class="card-header" id="headingah">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseah" aria-expanded="true" aria-controls="collapseah">
+        2.5.1 Example output of calculate_total_profit()
+      </button>
+    </div>
+
+    <div id="collapseah" class="collapse" aria-labelledby="headingah" data-parent="#accordionah">
+      <div class="card-body">
+        
+
+<pre is="tty"><kbd is="sh">dcc -o cs_pizzeria main.c pizzeria.c</kbd>
+<kbd is="sh">./cs_pizzeria</kbd>
+===========================[ CS Pizzeria ]==========================
+Welcome to CS Pizzeria! Type 'h' to see help.
+====================================================================
+000: <kbd>o Betty Margherita 10.99 10</kbd>
+Added order successfully!
+001: <kbd>&gt;</kbd>
+002: <kbd>i Regular-Base 1 2.0</kbd>
+Ingredient added successfully!
+003: <kbd>i Tomato-Paste 1 1.0</kbd>
+Ingredient added successfully!
+004: <kbd>i Mozzarella-Cheese 7 0.3</kbd>
+Ingredient added successfully!
+005: <kbd>i Basil-Leaf 7 0.15</kbd>
+Ingredient added successfully!
+006: <kbd>t</kbd>
+The total profit from this order is $4.84
+007: <kbd>q</kbd>
+</pre>
+
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+  </div>
+<div class="toc-switchable tab-pane fade" id="stage-3-tab" role="tab-panel">
+    <h2 id="stage-3">Stage 3</h2>
+
+<div class="alert alert-info">
+  <p>
+    You can run the autotests for <b>Stage 3</b> by running the following command:
+    </p><pre class="commandline"><b>1091 autotest-stage 03 cs_pizzeria</b></pre>
+  <p></p>
+</div>
+
+
+<aside class="rationale">
+  <p><b>Why does this stage exist?</b></p>
+  <p>
+    This stage tests your ability to manage memory, and delete from linked 
+    lists. These skills are more advanced applications of what you have achieved 
+    in Stage 1 and Stage 2, and help to advance your understanding of the linked 
+    list data structure. Whilst these skills are not essential to pass DPST1091, 
+    they are needed to succeed in the more difficult parts of the exam, and are 
+    essential in future courses.
+  </p>
+
+  <p><b>Who do we expect to complete this stage?</b></p>
+  <p>
+    Students who want to be prepared for future computing courses should attempt 
+    this stage. If you are struggling with DPST1091, you may find that doing 
+    this stage helps, though you may also get some benefit from working through 
+    lab exercises.
+  </p>
+
+  <p><b>What help will tutors provide to students?</b></p>
+  <p>
+    Tutors can give you a theoretical explaination, and give lots of help with 
+    the lab exercises that lead to this assignment. Tutors will be happy to help 
+    you debug issues with code, though they may prioritise Stage 1 and Stage 2
+    help over giving help to people in Stage 3. Some of the help given will be 
+    less specific than it would have been in Stage 1 and 2.
+  </p>
+
+  <p><b>How many marks will I get?</b></p>
+  <p>Completing this stage, with good style, is worth around a 90% mark.</p>
+</aside>
+
+<p>In this stage, you will implement:</p>
+<ol>
+  <li><code>cancel_order()</code></li>
+  <li><code>free_pizzeria()</code></li>
+  <li><code>refill_stock()</code></li>
+  <li><code>print_stock()</code></li>
+  <li><code>can_complete_order()</code></li>
+</ol>
+
+<p>In this stage, autotests will start to check for memory leaks in your program.</p>
+
+<div id="stage-3.1">
+  <h3>3.1 Cancel Order</h3>
+
+  <p>
+    Your first task is to implement the function: <code>cancel_order()</code>. 
+    The details of the function can be found in <code>pizzeria.h</code>.
+  </p>
+
+  <p>
+    This function will free the selected order and its associated memory. Once 
+    this occurs, you will need to change the selected order to the next order in 
+    the list, which would be the order after the order that has just been freed. 
+    All function calls should still behave as expected.
+  </p>
+
+  
+<div class="accordion" id="accordionj">
+  <div class="card">
+    <div class="card-header" id="headingj">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsej" aria-expanded="true" aria-controls="collapsej">
+        3.1.1 Diagram of a cancelled order
+      </button>
+    </div>
+
+    <div id="collapsej" class="collapse" aria-labelledby="headingj" data-parent="#accordionj">
+      <div class="card-body">
+         
+    <p><strong>Before</strong></p>
+    <figure class="image">
+      <img src="./DPST1091 22T1 - Assignment 2 - CS Pizzeria_files/pizzeria-cancel-order-before.svg">
+    </figure>
+
+    <p>
+      <strong>After command <code>c</code> is used when Sophia's order is 
+      selected</strong>
+    </p>
+    <figure class="image">
+      <img src="./DPST1091 22T1 - Assignment 2 - CS Pizzeria_files/pizzeria-cancel-order-after.svg">
+    </figure>
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+<div class="accordion" id="accordionai">
+  <div class="card">
+    <div class="card-header" id="headingai">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseai" aria-expanded="true" aria-controls="collapseai">
+        3.1.2 Example output cancelling one order
+      </button>
+    </div>
+
+    <div id="collapseai" class="collapse" aria-labelledby="headingai" data-parent="#accordionai">
+      <div class="card-body">
+         
+
+<pre is="tty"><kbd is="sh">dcc -o cs_pizzeria main.c pizzeria.c</kbd>
+<kbd is="sh">./cs_pizzeria</kbd>
+===========================[ CS Pizzeria ]==========================
+Welcome to CS Pizzeria! Type 'h' to see help.
+====================================================================
+000: <kbd>o Percy Anchovies 19.99 50</kbd>
+Added order successfully!
+001: <kbd>o Dumbledore Beef-n-Onion 10 30</kbd>
+Added order successfully!
+002: <kbd>o Remus Nutella 18.99 50</kbd>
+Added order successfully!
+003: <kbd>&gt;</kbd>
+004: <kbd>&gt;</kbd>
+005: <kbd>p</kbd>
+01: Percy ordered a Anchovies pizza ($19.99) due in 50 minutes.
+02: Dumbledore ordered a Beef-n-Onion pizza ($10.00) due in 30 minutes.
+03: Remus ordered a Nutella pizza ($18.99) due in 50 minutes.
+
+The selected order is Dumbledore's Beef-n-Onion pizza ($10.00) due in 30 minutes.
+006: <kbd>c</kbd>
+Selected order has been cancelled!
+007: <kbd>p</kbd>
+01: Percy ordered a Anchovies pizza ($19.99) due in 50 minutes.
+02: Remus ordered a Nutella pizza ($18.99) due in 50 minutes.
+
+The selected order is Remus's Nutella pizza ($18.99) due in 50 minutes.
+008: <kbd>q</kbd>
+</pre>
+
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+<div class="accordion" id="accordionaj">
+  <div class="card">
+    <div class="card-header" id="headingaj">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseaj" aria-expanded="true" aria-controls="collapseaj">
+        3.1.3 Example output cancelling multiple orders
+      </button>
+    </div>
+
+    <div id="collapseaj" class="collapse" aria-labelledby="headingaj" data-parent="#accordionaj">
+      <div class="card-body">
+         
+
+<pre is="tty"><kbd is="sh">dcc -o cs_pizzeria main.c pizzeria.c</kbd>
+<kbd is="sh">./cs_pizzeria</kbd>
+===========================[ CS Pizzeria ]==========================
+Welcome to CS Pizzeria! Type 'h' to see help.
+====================================================================
+000: <kbd>o Betty Margherita 10.99 10</kbd>
+Added order successfully!
+001: <kbd>o Joseph Pepperoni 13.99 10</kbd>
+Added order successfully!
+002: <kbd>o John Peri-Peri 12.99 30</kbd>
+Added order successfully!
+003: <kbd>o Sophia Meat-Lovers 12.99 20</kbd>
+Added order successfully!
+004: <kbd>&gt;</kbd>
+005: <kbd>i Regular-Base 1 2.0</kbd>
+Ingredient added successfully!
+006: <kbd>i Tomato-Paste 1 1.0</kbd>
+Ingredient added successfully!
+007: <kbd>i Basil-Leaf 7 0.15</kbd>
+Ingredient added successfully!
+008: <kbd>i Mozzarella-Cheese 7 0.3</kbd>
+Ingredient added successfully!
+009: <kbd>&gt;</kbd>
+010: <kbd>i Gluten-Free-Base 1 3.5</kbd>
+Ingredient added successfully!
+011: <kbd>i Mozzarella-Cheese 7 0.3</kbd>
+Ingredient added successfully!
+012: <kbd>i Tomato-Paste 1 1.0</kbd>
+Ingredient added successfully!
+013: <kbd>i Pepperoni-Slice 15 0.2</kbd>
+Ingredient added successfully!
+014: <kbd>&gt;</kbd>
+015: <kbd>&gt;</kbd>
+016: <kbd>i Regular-Base 1 2.0</kbd>
+Ingredient added successfully!
+017: <kbd>i Tomato-Paste 1 1.0</kbd>
+Ingredient added successfully!
+018: <kbd>i Pepperoni-Slice 4 0.2</kbd>
+Ingredient added successfully!
+019: <kbd>i Mozzarella-Cheese 5 0.3</kbd>
+Ingredient added successfully!
+020: <kbd>i Sliced-Beef-Sausage 3 0.4</kbd>
+Ingredient added successfully!
+021: <kbd>i Ham 4 0.2</kbd>
+Ingredient added successfully!
+022: <kbd>i Bacon-Piece 5 0.2</kbd>
+Ingredient added successfully!
+023: <kbd>&gt;</kbd>
+024: <kbd>&gt;</kbd>
+025: <kbd>p</kbd>
+01: Betty ordered a Margherita pizza ($10.99) due in 10 minutes.
+02: Joseph ordered a Pepperoni pizza ($13.99) due in 10 minutes.
+03: John ordered a Peri-Peri pizza ($12.99) due in 30 minutes.
+04: Sophia ordered a Meat-Lovers pizza ($12.99) due in 20 minutes.
+
+The selected order is Betty's Margherita pizza ($10.99) due in 10 minutes.
+    Basil-Leaf: 7 @ $0.15
+    Mozzarella-Cheese: 7 @ $0.30
+    Regular-Base: 1 @ $2.00
+    Tomato-Paste: 1 @ $1.00
+026:<kbd>c</kbd>
+Selected order has been cancelled!
+027: <kbd>p</kbd>
+01: Joseph ordered a Pepperoni pizza ($13.99) due in 10 minutes.
+02: John ordered a Peri-Peri pizza ($12.99) due in 30 minutes.
+03: Sophia ordered a Meat-Lovers pizza ($12.99) due in 20 minutes.
+
+The selected order is Joseph's Pepperoni pizza ($13.99) due in 10 minutes.
+    Gluten-Free-Base: 1 @ $3.50
+    Mozzarella-Cheese: 7 @ $0.30
+    Pepperoni-Slice: 15 @ $0.20
+    Tomato-Paste: 1 @ $1.00
+028: <kbd>c</kbd>
+Selected order has been cancelled!
+029: <kbd>p</kbd>
+01: John ordered a Peri-Peri pizza ($12.99) due in 30 minutes.
+02: Sophia ordered a Meat-Lovers pizza ($12.99) due in 20 minutes.
+
+The selected order is John's Peri-Peri pizza ($12.99) due in 30 minutes.
+030: <kbd>c</kbd>
+Selected order has been cancelled!
+031: <kbd>p</kbd>
+01: Sophia ordered a Meat-Lovers pizza ($12.99) due in 20 minutes.
+
+The selected order is Sophia's Meat-Lovers pizza ($12.99) due in 20 minutes.
+    Bacon-Piece: 5 @ $0.20
+    Ham: 4 @ $0.20
+    Mozzarella-Cheese: 5 @ $0.30
+    Pepperoni-Slice: 4 @ $0.20
+    Regular-Base: 1 @ $2.00
+    Sliced-Beef-Sausage: 3 @ $0.40
+    Tomato-Paste: 1 @ $1.00
+032: <kbd>c</kbd>
+Selected order has been cancelled!
+033: <kbd>p</kbd>
+
+No selected order.
+034: <kbd>q</kbd>
+</pre>
+
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div id="stage-3.2">
+  <h3>3.2 Free Pizzeria</h3>
+
+  <p>
+    Your second task is to implement the function: <code>free_pizzeria()</code>. 
+    The details of the function can be found in <code>pizzeria.h</code>.
+  </p>
+
+  <p>
+    Once called,<code>free_pizzeria</code> will free the pizzeria passed in and 
+    its associated memory.
+  </p>
+
+  <aside class="hint">
+    <p>
+      If you are leaking memory and completely convinced your 
+      <code>free_pizzeria()</code> function is correct, you may have prematurely
+      called <code>malloc()</code> in your <code>add_order()</code> or 
+      <code>add_ingredient()</code> implementations.
+    </p>
+  </aside>
+</div>
+
+<div id="stage-3.3">
+  <h3>3.3 Refill Stock</h3>
+
+  <p>
+    Your third task is to implement the function: <code>refill_stock()</code>. The 
+    details of the function can be found in <code>pizzeria.h</code>.
+  </p>
+
+  <p>
+    This function is how we insert ingredients into the stock. The stock is a 
+    one dimensional linked list of ingredients which keeps track of how many
+    ingredients there are in the pizzeria.
+  </p>
+
+  
+<div class="accordion" id="accordionk">
+  <div class="card">
+    <div class="card-header" id="headingk">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsek" aria-expanded="true" aria-controls="collapsek">
+        3.3.1 Diagram refilling an ingredient for the first time
+      </button>
+    </div>
+
+    <div id="collapsek" class="collapse" aria-labelledby="headingk" data-parent="#accordionk">
+      <div class="card-body">
+        
+    <p>Refilling the stock with the following commands</p>
+    <ul>
+      <li><code>r Base 100 3.00</code></li>
+      <li><code>r Ham 500 0.2</code></li>
+      <li><code>r Chicken 20 4.00</code></li>
+    </ul>
+    <figure class="image">
+      <img src="./DPST1091 22T1 - Assignment 2 - CS Pizzeria_files/pizzeria-refill-stock-frame-0.svg">
+    </figure>
+    <figure class="image">
+      <img src="./DPST1091 22T1 - Assignment 2 - CS Pizzeria_files/pizzeria-refill-stock-frame-1.svg">
+    </figure>
+    <figure class="image">
+      <img src="./DPST1091 22T1 - Assignment 2 - CS Pizzeria_files/pizzeria-refill-stock-frame-2.svg">
+    </figure>
+    <figure class="image">
+      <img src="./DPST1091 22T1 - Assignment 2 - CS Pizzeria_files/pizzeria-refill-stock-frame-3.svg">
+    </figure>
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+<div class="accordion" id="accordionl">
+  <div class="card">
+    <div class="card-header" id="headingl">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsel" aria-expanded="true" aria-controls="collapsel">
+        3.3.2 Diagram refilling the same ingredient again
+      </button>
+    </div>
+
+    <div id="collapsel" class="collapse" aria-labelledby="headingl" data-parent="#accordionl">
+      <div class="card-body">
+         
+    <p><strong>Before</strong></p>
+    <figure class="image">
+      <img src="./DPST1091 22T1 - Assignment 2 - CS Pizzeria_files/pizzeria-refill-stock-merge-before.svg">
+    </figure>
+    
+    <p><strong>After using the command <code>r Base 50 3.00</code></strong></p>
+    <figure class="image">
+      <img src="./DPST1091 22T1 - Assignment 2 - CS Pizzeria_files/pizzeria-refill-stock-merge-after.svg">
+    </figure>
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <aside class="hint">
+    <p>Remember to free the stock in <code>free_pizzeria()</code>!</p>
+  </aside>
+</div>
+
+<div id="stage-3.4">
+  <h3>3.4 Print Stock</h3>
+
+  <p>
+    Your fourth task is to implement the function: <code>print_stock()</code>. The 
+    details of the function can be found in <code>pizzeria.h</code>.
+  </p>
+
+  <p>
+    This function is how we print all the in-stock ingredients in the pizzeria. 
+    You should use the provided helper function <code>print_ingredient()</code>
+    to print the ingredients in the expected format.
+  </p>
+
+  
+<div class="accordion" id="accordionak">
+  <div class="card">
+    <div class="card-header" id="headingak">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseak" aria-expanded="true" aria-controls="collapseak">
+        3.4.1 Example output of print_stock()
+      </button>
+    </div>
+
+    <div id="collapseak" class="collapse" aria-labelledby="headingak" data-parent="#accordionak">
+      <div class="card-body">
+         
+
+<pre is="tty"><kbd is="sh">dcc -o cs_pizzeria main.c pizzeria.c</kbd>
+<kbd is="sh">./cs_pizzeria</kbd>
+===========================[ CS Pizzeria ]==========================
+Welcome to CS Pizzeria! Type 'h' to see help.
+====================================================================
+000: <kbd>r Regular-Base 600 2.0</kbd>
+Ingredient added successfully!
+001: <kbd>s</kbd>
+The stock contains:
+    Regular-Base: 600 @ $2.00
+002: <kbd>r Tomato-Paste 100 1.0</kbd>
+Ingredient added successfully!
+003: <kbd>s</kbd>
+The stock contains:
+    Regular-Base: 600 @ $2.00
+    Tomato-Paste: 100 @ $1.00
+004: <kbd>r Mozzarella-Cheese 1000 0.3</kbd>
+Ingredient added successfully!
+005: <kbd>s</kbd>
+The stock contains:
+    Mozzarella-Cheese: 1000 @ $0.30
+    Regular-Base: 600 @ $2.00
+    Tomato-Paste: 100 @ $1.00
+006: <kbd>r Basil-Leaf 400 0.15</kbd>
+Ingredient added successfully!
+007: <kbd>s</kbd>
+The stock contains:
+    Basil-Leaf: 400 @ $0.15
+    Mozzarella-Cheese: 1000 @ $0.30
+    Regular-Base: 600 @ $2.00
+    Tomato-Paste: 100 @ $1.00
+008: <kbd>r Tomato-Paste 10 1.0</kbd>
+Ingredient added successfully
+009: <kbd>s</kbd>
+The stock contains:
+    Basil-Leaf: 400 @ $0.15
+    Mozzarella-Cheese: 1000 @ $0.30
+    Regular-Base: 600 @ $2.00
+    Tomato-Paste: 110 @ $1.00
+010: <kbd>q</kbd>
+</pre>
+
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div id="stage-3.5">
+  <h3>3.5 Can Complete Order</h3>
+
+  <p>
+    Your fifth task is to implement the function: <code>can_complete_order()</code>. 
+    The details of the function can be found in <code>pizzeria.h</code>.
+  </p>
+
+  <p>
+    The chefs of the pizzeria need to know if they can complete the order with 
+    their current stock. <code>can_complete_order()</code> will compare the 
+    selected order's required ingredients with the pizzeria's stock of 
+    ingredients.
+  </p>
+
+  
+<div class="accordion" id="accordional">
+  <div class="card">
+    <div class="card-header" id="headingal">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseal" aria-expanded="true" aria-controls="collapseal">
+        3.5.1 Example output can_complete_order()
+      </button>
+    </div>
+
+    <div id="collapseal" class="collapse" aria-labelledby="headingal" data-parent="#accordional">
+      <div class="card-body">
+        
+
+<pre is="tty"><kbd is="sh">dcc -o cs_pizzeria main.c pizzeria.c</kbd>
+<kbd is="sh">./cs_pizzeria</kbd>
+===========================[ CS Pizzeria ]==========================
+Welcome to CS Pizzeria! Type 'h' to see help.
+====================================================================
+000: <kbd>r Regular-Base 100 2.0</kbd>
+Ingredient added successfully!
+001: <kbd>r Tomato-Paste 200 1.0</kbd>
+Ingredient added successfully!
+002: <kbd>r Mozzarella-Cheese 3 0.3</kbd>
+Ingredient added successfully!
+003: <kbd>r Basil-Leaf 10 0.15</kbd>
+Ingredient added successfully!
+004: <kbd>s</kbd>
+The stock contains:
+    Basil-Leaf: 10 @ $0.15
+    Mozzarella-Cheese: 3 @ $0.30
+    Regular-Base: 100 @ $2.00
+    Tomato-Paste: 200 @ $1.00
+005: <kbd>o Stanley Margherita 10.99 10</kbd>
+Added order successfully!
+006: <kbd>&gt;</kbd>
+007: <kbd>i Regular-Base 1 2.0</kbd>
+Ingredient added successfully!
+008: <kbd>i Tomato-Paste 1 1.0</kbd>
+Ingredient added successfully!
+009: <kbd>i Mozzarella-Cheese 4 0.3</kbd>
+Ingredient added successfully!
+010: <kbd>i Basil-Leaf 2 0.15</kbd>
+Ingredient added successfully!
+011: <kbd>p</kbd>
+01: Stanley ordered a Margherita pizza ($10.99) due in 10 minutes.
+
+The selected order is Stanley's Margherita pizza ($10.99) due in 10 minutes.
+    Basil-Leaf: 2 @ $0.15
+    Mozzarella-Cheese: 4 @ $0.30
+    Regular-Base: 1 @ $2.00
+    Tomato-Paste: 1 @ $1.00
+012: <kbd>?</kbd>
+There are not enough items in the stock for this order to be completed!
+013: <kbd>q</kbd>
+</pre>
+
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+  </div>
+<div class="toc-switchable tab-pane fade" id="stage-4-tab" role="tab-panel">
+    <h2 id="stage-4">Stage 4</h2>
+
+<div class="alert alert-info">
+  <p>
+    You can run the autotests for <b>Stage 4</b> by running the following command:
+    </p><pre class="commandline"><b>1091 autotest-stage 04 cs_pizzeria</b></pre>
+  <p></p>
+</div>
+
+
+<aside class="rationale">
+  <p><b>Why does this stage exist?</b></p>
+  <p>
+    This stage tests your ability to perform more complex linked list operations
+    and manipulate strings in more advanced ways. These skills are not essential
+    to pass DPST1091 but provide a challenge for those looking for it.
+  </p>
+
+  <p><b>Who do we expect to complete this stage?</b></p>
+  <p>
+    Students who are looking for a greater challenge from the course. It is not
+    expected for a majority of the cohort to attempt this stage.
+  </p>
+
+  <p><b>What help will tutors provide to students?</b></p>
+  <p>
+    Tutors can give you a theoretical explanation to understand this stage.
+    They will not be able to give specific advice on what code is needed nor
+    will they be able to help with specific bugs you encounter.
+  </p>
+
+  <p><b>How many marks will I get?</b></p>
+  <p>Completing this stage, with good style, is worth around a 100% mark.</p>
+</aside>
+
+
+<p>In this stage, you will implement:</p>
+<ol>
+  <li><code>complete_order()</code></li>
+  <li><code>save_ingredients()</code></li>
+  <li><code>load_ingredients()</code></li>
+</ol>
+
+<div id="stage-4.1">
+  <h3>4.1 Complete order</h3>
+
+  <p>
+    Your first task is to implement the function: <code>complete_order()</code>.
+    The details of the function can be found in <code>pizzeria.h</code>.
+  </p>
+
+  <p>
+    This function will complete the selected order if it is possible and adjust
+    the stock based on this completion. This will involve using free on an
+    entire order and removing certain elements from the stock given the
+    condition outlined in <code>pizzeria.h</code>
+  </p>
+  <p>
+    You will need to rely heavily on the reference solution to ensure your
+    solution is correct.
+  </p>
+
+  
+<div class="accordion" id="accordionam">
+  <div class="card">
+    <div class="card-header" id="headingam">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseam" aria-expanded="true" aria-controls="collapseam">
+        4.1.1 Simple Completion
+      </button>
+    </div>
+
+    <div id="collapseam" class="collapse" aria-labelledby="headingam" data-parent="#accordionam">
+      <div class="card-body">
+        
+<pre is="tty"><kbd is="sh">dcc -o cs_pizzeria main.c pizzeria.c</kbd>
+<kbd is="sh">./cs_pizzeria</kbd>
+===========================[ CS Pizzeria ]==========================
+Welcome to CS Pizzeria! Type 'h' to see help.
+====================================================================
+...
+Other commands appeared before here
+...
+
+010: <kbd>p</kbd>
+01: Stanley ordered a Margherita pizza ($10.99) due in 10 minutes.
+
+The selected order is Stanley's Margherita pizza ($10.99) due in 10 minutes.
+Basil-Leaf: 2 @ $0.15
+Mozzarella-Cheese: 4 @ $0.30
+Regular-Base: 1 @ $2.00
+Tomato-Paste: 1 @ $1.00
+011: <kbd>s</kbd>
+The stock contains:
+    Basil-Leaf: 10 @ $0.15
+    Mozzarella-Cheese: 4 @ $0.30
+    Regular-Base: 100 @ $2.00
+    Tomato-Paste: 200 @ $1.00
+012: <kbd>#</kbd>
+The selected order has been completed!
+013: <kbd>p</kbd>
+
+No selected order.
+014: <kbd>s</kbd>
+The stock contains:
+    Basil-Leaf: 8 @ $0.15
+    Regular-Base: 99 @ $2.00
+    Tomato-Paste: 199 @ $1.00
+015: <kbd>q</kbd>
+</pre>
+
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+<div class="accordion" id="accordionan">
+  <div class="card">
+    <div class="card-header" id="headingan">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsean" aria-expanded="true" aria-controls="collapsean">
+        4.2.1 Simple Non-Completion
+      </button>
+    </div>
+
+    <div id="collapsean" class="collapse" aria-labelledby="headingan" data-parent="#accordionan">
+      <div class="card-body">
+        
+
+<pre is="tty"><kbd is="sh">dcc -o cs_pizzeria main.c pizzeria.c</kbd>
+<kbd is="sh">./cs_pizzeria</kbd>
+===========================[ CS Pizzeria ]==========================
+Welcome to CS Pizzeria! Type 'h' to see help.
+====================================================================
+...
+Other commands appeared before here
+...
+010: <kbd>p</kbd>
+01: Stanley ordered a Margherita pizza ($10.99) due in 10 minutes.
+
+The selected order is Stanley's Margherita pizza ($10.99) due in 10 minutes.
+Basil-Leaf: 2 @ $0.15
+Mozzarella-Cheese: 4 @ $0.30
+Regular-Base: 1 @ $2.00
+Tomato-Paste: 1 @ $1.00
+011: <kbd>s</kbd>
+The stock contains:
+    Basil-Leaf: 10 @ $0.15
+    Mozzarella-Cheese: 3 @ $0.30
+    Regular-Base: 100 @ $2.00
+    Tomato-Paste: 200 @ $1.00
+012: <kbd>#</kbd>
+There are not enough items in the stock for this order to be completed!
+013: <kbd>p</kbd>
+01: Stanley ordered a Margherita pizza ($10.99) due in 10 minutes.
+
+The selected order is Stanley's Margherita pizza ($10.99) due in 10 minutes.
+Basil-Leaf: 2 @ $0.15
+Mozzarella-Cheese: 4 @ $0.30
+Regular-Base: 1 @ $2.00
+Tomato-Paste: 1 @ $1.00
+014: <kbd>s</kbd>
+The stock contains:
+    Basil-Leaf: 10 @ $0.15
+    Mozzarella-Cheese: 3 @ $0.30
+    Regular-Base: 100 @ $2.00
+    Tomato-Paste: 200 @ $1.00
+015: <kbd>q</kbd>
+</pre>
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<h3>4.2/4.3 Preamble</h3>
+<p>For the next two sections, you have been provided a small library to save and
+load strings into files:</p>
+
+<dl class="row">
+  <dt class="col-3 text-right"><code class="cant_change">
+    <a href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/activities/cs_pizzeria/save_string.h">save_string.h</a></code>
+  </dt>
+  <dd class="col-9">
+    <ul>
+      <li><span class="cant_change"><b>Do not change this file.</b></span></li>
+      <li>
+        Contains declarations for functions to be used for file handling.
+      </li>
+      <li>
+        We may need to update this file from time to time (in the case of typos, or missing
+        statements). The most up-to-date version number of the file will be mentioned at
+        the very top of this page.
+      </li>
+    </ul>
+  </dd>
+
+  <dt class="col-3 text-right"><code class="cant_change">
+    <a href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/activities/cs_pizzeria/save_string.c">save_string.c</a></code>
+  </dt>
+  <dd class="col-9">
+    <ul>
+      <li><span class="cant_change"><b>Do not change this file.</b></span></li>
+      <li>
+        Contains implementations for functions to be used for file handling.
+      </li>
+      <li>
+        You do not need to understand what is going on here but if you are
+        interested in implementation, feel free to read this!
+      </li>
+      <li>
+        We may need to update this file from time to time (in the case of typos, or missing
+        statements). The most up-to-date version number of the file will be mentioned at
+        the very top of this page.
+      </li>
+    </ul>
+  </dd>
+</dl>
+
+<p>To download these files, run the following commands in your terminal:</p>
+<pre is="tty"><kbd is="sh">ln -s /web/dp1091/22T1/activities/cs_pizzeria/save_string.c .</kbd>
+<kbd is="sh">ln -s /web/dp1091/22T1/activities/cs_pizzeria/save_string.h .</kbd>
+</pre>
+
+<p>To compile your program now, you will need to run: </p>
+<pre is="tty"><kbd is="sh">dcc -o cs_pizzeria save_string.c main.c pizzeria.c</kbd>
+</pre>
+
+<div class="alert alert-info">
+  You will need to <code>#include "save_string.h"</code> in your <code>
+  pizzeria.c</code> to use the provided functions.
+</div>
+
+<div id="stage-4.2">
+  <h3>4.2 Save Ingredients</h3>
+
+  <p>
+    Your second task is to implement the function: <code>save_ingredients()</code>.
+    The details of the function can be found in <code>pizzeria.h</code>.
+  </p>
+
+  <p>
+    Once called,<code>save_ingredients</code> will save the ingredients of the
+    selected ordered as a string to a file. A function <code>save_string()</code>
+    has been provided to save a given string into a file.
+  </p>
+  <aside class="hint">
+    You may find the function <code>sprintf()</code> to be useful.
+  </aside>
+</div>
+
+<div id="stage-4.3">
+  <h3>4.3 Load Ingredients</h3>
+
+  <p>
+    Your third task is to implement the function: <code>load_ingredients()</code>.
+    The details of the function can be found in <code>pizzeria.h</code>.
+  </p>
+
+  <p>
+    Once called,<code>load_ingredients</code> will add the ingredients of the
+    file with the given name to the currently selected order. A function
+    <code>load_string()</code> has been provided to load the file of the given
+    name into a string which it returns.
+  </p>
+
+  
+<div class="accordion" id="accordionao">
+  <div class="card">
+    <div class="card-header" id="headingao">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseao" aria-expanded="true" aria-controls="collapseao">
+        4.3.1 Simple Save and Load
+      </button>
+    </div>
+
+    <div id="collapseao" class="collapse" aria-labelledby="headingao" data-parent="#accordionao">
+      <div class="card-body">
+        
+
+<pre is="tty"><kbd is="sh">dcc -o cs_pizzeria main.c pizzeria.c</kbd>
+<kbd is="sh">./cs_pizzeria</kbd>
+===========================[ CS Pizzeria ]==========================
+Welcome to CS Pizzeria! Type 'h' to see help.
+====================================================================
+000: <kbd>o Stanley Margherita 10.99 10</kbd>
+Added order successfully!
+001: <kbd>o Sophia Margerita 10.99 20</kbd>
+Added order successfully!
+002: <kbd>&gt;</kbd>
+003: <kbd>i Regular-Base 1 2.0</kbd>
+Ingredient added successfully!
+004: <kbd>i Tomato-Paste 1 1.0</kbd>
+Ingredient added successfully!
+005: <kbd>i Mozzarella-Cheese 4 0.3</kbd>
+Ingredient added successfully!
+006: <kbd>i Basil-Leaf 2 0.15</kbd>
+Ingredient added successfully!
+007: <kbd>S Margherita</kbd>
+Order has successfully been saved into file 'Margherita.txt'
+008: <kbd>&gt;</kbd>
+009: <kbd>p</kbd>
+01: Stanley ordered a Margherita pizza ($10.99) due in 10 minutes.
+02: Sophia ordered a Margerita pizza ($10.99) due in 20 minutes.
+
+The selected order is Sophia's Margerita pizza ($10.99) due in 20 minutes.
+010: <kbd>L Margherita</kbd>
+Order has successfully been loaded from file 'Margherita.txt'
+011: <kbd>p</kbd>
+01: Stanley ordered a Margherita pizza ($10.99) due in 10 minutes.
+02: Sophia ordered a Margerita pizza ($10.99) due in 20 minutes.
+
+The selected order is Sophia's Margerita pizza ($10.99) due in 20 minutes.
+Basil-Leaf: 2 @ $0.15
+Mozzarella-Cheese: 4 @ $0.30
+Regular-Base: 1 @ $2.00
+Tomato-Paste: 1 @ $1.00
+012: <kbd>q</kbd>
+</pre>
+
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+<div class="accordion" id="accordionap">
+  <div class="card">
+    <div class="card-header" id="headingap">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseap" aria-expanded="true" aria-controls="collapseap">
+        4.3.2 Save Load Merge Ingredients
+      </button>
+    </div>
+
+    <div id="collapseap" class="collapse" aria-labelledby="headingap" data-parent="#accordionap">
+      <div class="card-body">
+        
+
+<pre is="tty"><kbd is="sh">dcc -o cs_pizzeria main.c pizzeria.c</kbd>
+<kbd is="sh">./cs_pizzeria</kbd>
+===========================[ CS Pizzeria ]==========================
+Welcome to CS Pizzeria! Type 'h' to see help.
+====================================================================
+000: <kbd>o Stanley Pepperoni 10.99 10</kbd>
+Added order successfully!
+001: <kbd>o Sophia Margerita 10.99 20</kbd>
+Added order successfully!
+002: <kbd>&gt;</kbd>
+003: <kbd>i Regular-Base 1 2.0</kbd>
+Ingredient added successfully!
+004: <kbd>i Tomato-Paste 1 1.0</kbd>
+Ingredient added successfully!
+005: <kbd>i Mozzarella-Cheese 4 0.3</kbd>
+Ingredient added successfully!
+006: <kbd>i Pepperoni 10 0.15</kbd>
+Ingredient added successfully!
+007: <kbd>S Pepperoni</kbd>
+Order has successfully been saved into file 'Pepperoni.txt'
+008: <kbd>&gt;</kbd>
+009: <kbd>i Mozzarella-Cheese 5 0.3</kbd>
+Ingredient added successfully!
+010: <kbd>i Pepperoni 7 0.15</kbd>
+Ingredient added successfully!
+011: <kbd>p</kbd>
+01: Stanley ordered a Pepperoni pizza ($10.99) due in 10 minutes.
+02: Sophia ordered a Margerita pizza ($10.99) due in 20 minutes.
+
+The selected order is Sophia's Margerita pizza ($10.99) due in 20 minutes.
+Mozzarella-Cheese: 5 @ $0.30
+Pepperoni: 7 @ $0.15
+012: <kbd>L Pepperoni</kbd>
+Order has successfully been loaded from file 'Pepperoni.txt'
+013: <kbd>p</kbd>
+01: Stanley ordered a Pepperoni pizza ($10.99) due in 10 minutes.
+02: Sophia ordered a Margerita pizza ($10.99) due in 20 minutes.
+
+The selected order is Sophia's Margerita pizza ($10.99) due in 20 minutes.
+Mozzarella-Cheese: 9 @ $0.30
+Pepperoni: 17 @ $0.15
+Regular-Base: 1 @ $2.00
+Tomato-Paste: 1 @ $1.00
+014: <kbd>q</kbd>
+</pre>
+
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <aside class="hint">
+    You may find the function <code>sscanf()</code> to be useful.
+  </aside>
+</div>
+  </div>
+</div>
+<script>
+  // This code ensures the ToC will also change tabs as necessary.
+
+  window.addEventListener('hashchange', () => accessRightSection());
+  async function accessRightSection() {
+    const arr =  location.hash.split(".");
+    const tabButton = document.querySelector(`a.nav-link[href="${arr[0]}-tab"][role="tab"]`);
+    if (tabButton) {
+      tabButton.click();
+      tabButton.scrollIntoView();
+      window.scrollBy(0, -100);
+      await new Promise(r => setTimeout(r, 200));
+      window.location.assign(location.hash);
+
+    }
+    window.scrollBy(0, -100);
+  }
+</script>
+
+
+
+
+
+<h1 id="assessment" class="mb-3 mt-1">Assessment</h1>
+<h2 id="attribution">Attribution of Work</h2>
+<p>
+This is an individual assignment. The work you submit must be your own work and only your
+work apart from  exceptions below.  Joint work is not permitted.
+</p><p>
+You may use small amounts (&lt; 10 lines) of general purpose code (not
+specific to the assignment) obtained from
+site such as Stack Overflow or other publically available resources.
+You should attribute clearly the source of this code in a comment
+with it.
+</p><p>
+You are not permitted to request help with the assignment apart from
+in the course forum, help sessions or from course lecturers or tutors.
+</p><p>
+Do not provide or show your assignment work to any other person (including by posting it on the forum)
+apart from the teaching staff of DPST1091.
+
+</p><p>
+The work you submit must otherwise be entirely your own work.  Submission of work partially or completely derived
+from any other person or jointly written with any other person is not permitted.
+The penalties for such an offence may include negative marks,
+automatic failure of the course and possibly other academic discipline.
+Assignment submissions will be examined both automatically and manually
+for such submissions.
+</p><p>
+Relevant scholarship authorities will be informed if students holding scholarships
+are involved in an incident of plagiarism or other misconduct.
+If you knowingly provide or show your assignment work to another person for any
+reason, and work derived from it is submitted you may be penalized, even
+if the work was submitted without your knowledge or consent.  This may
+apply even if your work is submitted by a third party unknown to you.
+</p><p>
+Note, you will not be penalised if your work is
+taken without your consent or knowledge.
+
+</p><h2 id="submission">Submission of Work</h2>
+<b>
+You are required to test and/or submit intermediate versions of your assignment.
+</b>
+Every time you work on the assignment and make some progress you
+should copy your work to your CSE account and submit it using the <code>give</code> command,
+or autotest it using <code>1091 autotest</code>
+<p>
+It is fine if intermediate versions do not compile or otherwise
+fail submission tests.
+</p><p>
+    Only the final submitted version of your assignment will be marked. <b>You must <code>give</code> when you
+    have completed your assignment.</b>
+</p><p>
+If you would like to retrieve your old work, you can go to: <a href="https://cgi.cse.unsw.edu.au/~dp1091/21T1/student/">View Autotests/Submissions/Marking</a> and click the yellow bubble next to <code>ass2_cs_pizzeria</code>. This will show you a timeline of all the code you have submitted recently.
+</p><p>
+You submit your work like this:
+</p><p>
+
+</p><pre is="tty"><kbd is="sh">give dp1091 ass2_cs_pizzeria pizzeria.c</kbd>
+</pre>
+
+<p>
+    The only files you can modify are <code>pizzeria.c</code>.
+    <b>It is not possible to add new files, or modify the other files we have given you</b>.
+    If you believe you need to modify those files, you have misunderstood the specification.
+
+You should not modify your copies of those files in any way.
+
+</p><h2 id="assessment-scheme">Assessment Scheme</h2>
+
+<p>This assignment will contribute 25% to your final mark.</p>
+
+<p>
+  80% of the marks for this assignment will be based on the performance of the 
+  code you write in <code>pizzeria.c</code>.
+</p>
+
+<p>
+  20% of the marks for this assignment will come from manually marking of the 
+  readability of the code you have written in C. These marks will be awarded on
+  the basis of clarity, commenting, elegance and style. In other words, your 
+  tutor will assess how easy it is for a human to read and understand your 
+  program.
+</p>
+
+<p>Marks for your performance will be allocated according to the below scheme:</p>
+
+<p>
+  Marks for your performance will be allocated roughly according to the below scheme.
+</p>
+
+<table class="table table-bordered table-striped">
+  <tbody><tr>
+    <td>100% for Performance</td>
+    <td>Completely working implementation, which exactly follows the spec.</td>
+  </tr>
+  <tr>
+    <td>90% for Performance</td>
+    <td>Completely working implementation of Stage 1, 2, and 3.</td>
+  </tr>
+  <tr>
+    <td>65% for Performance</td>
+    <td>Completely working implementation of Stage 1 and 2.</td>
+  </tr>
+  <tr>
+    <td>50% for Performance</td>
+    <td>
+      Partially working implementation of Stage 1 and Stage 2's functions:
+      Select Next, Select Previous and Print Selected Order.
+    </td>
+  </tr>
+  <tr>
+    <td>30% for Performance</td>
+    <td>Completely working implementation of Stage 1</td>
+  </tr>
+  <tr>
+    <td>20% for Performance</td>
+    <td>
+      Completely working implementation of Stage 1 functions: Add Order and 
+      Print All Orders.
+    </td>
+  </tr>
+</tbody></table>
+
+<p>
+  Marks for your style will be allocated roughly according to the scheme below.
+</p>
+
+<table class="table table-bordered table-striped">
+  <tbody><tr>
+    <td>100% for Style</td>
+    <td>Perfect style</td>
+  </tr>
+  <tr>
+    <td>90% for Style</td>
+    <td>Great style, almost all style characteristics perfect.</td>
+  </tr>
+  <tr>
+    <td>80% for Style</td>
+    <td>Good style, one or two style characteristics not well done.</td>
+  </tr> 
+  <tr>
+    <td>70% for Style</td>
+    <td>Good style, a few style characteristics not well done.</td>
+  </tr>
+  <tr>
+    <td>60% for Style</td>
+    <td>OK style, an attempt at most style characteristics.</td>
+  </tr>
+  <tr>
+    <td> &lt;= 50% for Style</td>
+    <td>An attempt at style.</td>
+  </tr>
+</tbody></table>
+
+<p>
+  The following is a list of items that will be considered when your program is 
+  assessed for style:
+</p>
+
+<ul>
+  <li>
+    Header commenting (including your zID, the date and a short description
+    of the program).
+  </li>
+  <li>Consistent, sensible indenting.</li>
+  <li>Using blank lines and whitespace.</li>
+  <li>Using constants.</li>
+  <li>Using functions effectively.</li>
+  <li>
+    Using comments effectively (at least at the top of functions, and not
+    containing irrelevant information).
+  </li>
+</ul>
+
+<p>Note that the following penalties apply to your total mark for plagiarism:</p>
+
+<table class="table table-bordered table-striped">
+  <tbody><tr>
+    <td>0 for the assignment</td>
+    <td>
+      Knowingly providing your work to anyone and it is subsequently submitted 
+      (by anyone).
+    </td>
+  </tr>
+  <tr>
+    <td>0 for the assignment</td>
+    <td>Submitting any other person's work. This includes joint work.</td>
+  </tr>
+  <tr>
+    <td>0 FL for DPST1091</td>
+    <td>
+      Paying another person to complete work. Submitting another person's work 
+      without their consent.
+    </td>
+  </tr>
+</tbody></table>
+
+
+<h3 id="due">Due Date</h3>
+<p>
+This assignment is due  Friday 8 April  23:59:59
+</p><p>
+If your assignment is submitted after this date, each hour it is late reduces
+the maximum mark it can achieve by 2%.
+For example if an assignment worth 78% was submitted
+5 hours late, the late submission would have no effect.
+If the same assignment was submitted 15 hours late it would be awarded
+70%, the maximum mark it can achieve at that time.
+
+</p><h3 id="changes">Change Log</h3>
+<dl class="row">
+<dt class="col-3">
+    Version 1.0<br>
+    <small>(2022-03-11 17:00:00)</small>
+  </dt>
+  <dd class="col-9">
+    <ul>
+      <li>Assignment released.</li>
+    </ul>
+  </dd>
+</dl>
+
+<h3 id="credits">Credits</h3>
+<p>
+Created by Clarissa Tatang and Rory Gollage. 
+  </p>
+  <p>
+Contributions from Tom Kunc, Sasha Vassar, and Shrey Somaiya.
+  </p>
+
+
+
+
+</div> <!-- col contents -->
+<div class="d-none d-lg-block col-lg-2">
+  <nav id="toc" data-toggle="toc"><ul class="nav navbar-nav"><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass2/index.html#assignment-2-cs-pizzeria">
+Assignment 2 - CS Pizzeria
+</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass2/index.html#cs-pizzeria">CS Pizzeria</a><ul class="nav navbar-nav"><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass2/index.html#overview">Overview</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass2/index.html#allowed-c-features">Allowed C Features</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass2/index.html#reference-implementation">Reference Implementation</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass2/index.html#starter-code">Starter Code</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass2/index.html#how-to-get-started">How To Get Started</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass2/index.html#how-to-compile">How To Compile</a></li></ul></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass2/index.html#your-tasks">Your Tasks</a><ul class="nav navbar-nav"><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass2/index.html#stage-1">Stage 1</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass2/index.html#stage-2">Stage 2</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass2/index.html#stage-3">Stage 3</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass2/index.html#stage-4">Stage 4</a></li></ul></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass2/index.html#assessment">Assessment</a><ul class="nav navbar-nav"><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass2/index.html#attribution">Attribution of Work</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass2/index.html#submission">Submission of Work</a></li><li><a class="nav-link" href="https://cgi.cse.unsw.edu.au/~dp1091/22T1/assignments/ass2/index.html#assessment-scheme">Assessment Scheme</a></li></ul></li></ul></nav>
+</div> <!-- col toc -->
+</div> <!-- row -->
+<script>
+  $(function() {
+  var navSelector = "#toc";
+  var $myNav = $(navSelector);
+  Toc.init($myNav);
+  $("body").scrollspy({
+    target: navSelector
+  });
+});
+</script>
+
+
+
+
+</main>
+
+<footer class="mt-3 pt-3 bg-dark text-center no-print">
+<p class="text-muted">
+<strong>DPST1091 22T1: Programming Fundamentals!</strong>
+is brought to you by <br>
+the <a href="https://www.cse.unsw.edu.au/">School of Computer Science and Engineering</a><br>
+at the <a href="https://www.unsw.edu.au/">University of New South Wales</a>, Sydney.<br>
+For all enquiries, please email the class account at
+<a href="mailto:@cse.unsw.edu.au">dp1091@cse.unsw.edu.au</a><br>
+
+<small>CRICOS Provider 00098G</small>
+</p>
+
+
+</footer>
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
