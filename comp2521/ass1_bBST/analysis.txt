@@ -1,0 +1,76 @@
+
+========================================================================
+                          Complexity Analysis
+========================================================================
+
+NOTE:
+- Your time complexities should be in big-O notation.
+- For operations that involve only one set, your time complexities should
+  be in terms of n, where n is the number of elements in the set.
+- For operations that involve two sets, your time complexities should be in
+  terms of n and m, where n and m are the number of elements in each of the
+  sets respectively.
+
+--------
+TreeKthSmallest
+--------
+
+Worst case complexity: O(log n)
+
+Explanation: 
+
+The worst case is when the smallest node is at the leftmost leaf node of the balanced tree so we will have to transverse all the way to the leftmost side of the tree.
+
+
+---------------
+TreeKthLargest
+---------------
+
+Worst case complexity: O(log n)
+
+Explanation: 
+
+The worst case is when the largest node is at the rightmost leaf node of the balanced tree so we will have to transverse all the way to the rightmost side of the tree.
+
+-------------
+TreeLCA
+-------------
+
+Worst case complexity: O(logn)
+
+Explanation: 
+The worst case occurs the node that we are trying to find, is located at the bottom of the balanced tree so we will have to transverse all the way to find it. However, if the tree is unbalanced, the worst case complexity would be O(n).
+
+
+-------------
+TreeFloor
+-------------
+
+Worst case complexity: O(log n)
+
+Explanation: 
+
+For this function, the worst case scenario would be when the entrity of the height of the treee will be visited by the algorithm to find the key. However, if the tree is degenerate tree, the worst case complexity would be O(n).
+
+-------------
+TreeCeiling
+-------------
+
+Worst case complexity: O(log n)
+
+Explanation: 
+
+The worst case scenario is that the function will have to trasverse the entrity of the hieight of the balanced tree to find the ceiling node. However, if the tree is unbalanced, the worset case complexity would be O(n).
+
+
+-------------
+TreeSearchBetween
+-------------
+
+Worst case complexity: O(log(n) + m)
+
+Explanation: 
+
+This occurs when we visit all the m nodes to add them into the output list (the range between lower and upper key is wide).
+
+
