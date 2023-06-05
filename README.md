@@ -1,4 +1,4 @@
-# compbh_projects
+# portfolio_compbh
 
 This repository includes all the projects and assignments that I've done throughout my bachelor's degree.
 
