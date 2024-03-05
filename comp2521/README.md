@@ -1,4 +1,4 @@
 # COMP2521: Data Structures and Algorithms
 
-#### Assignment 1: Balanced Binary Search Trees
-#### Assignment 2: Bouldering < this assignment is only 50% completed >
+Assignment 1: Balanced Binary Search Trees [Mark: 12.5/15 (83%)]
+Assignment 2: Bouldering [Mark: 10/20 (50%)]
